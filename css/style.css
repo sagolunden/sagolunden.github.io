@@ -4,7 +4,7 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
 	font-size: 1em;
-	color: #8a8683;
+	color: #2e2e2e;
 	background-color:#ffffff;
 }
 img {
@@ -108,21 +108,15 @@ ul.navigation{
 }
 #slide-sago2 h1{
     font-size: 2.8em;
-	letter-spacing: -3px;
-	line-height: 0px;
-	color:#8a8683;
 	font-weight: 700;
 }
  #slide-sago h1 {
 	font-size: 3.7em;
-	letter-spacing: -3px;
 	line-height: 0px;
-	color:#8a8683;
 	font-weight: 700;
 }
 #slide-sago2 h2,#slide-sago h2 {
 	font-size: 2em;
-	color: #8a8683;
 	line-height: 0px;
 	padding-bottom:20px;
 	font-weight: 400;
@@ -142,7 +136,6 @@ ul.navigation{
     background-position: 0px 10.678125px;
 }
 #slide-img h1 {
-	letter-spacing: -3px;
 	line-height: 0px;
 	color:#ffffff;
 	font-weight: 700;
@@ -164,7 +157,6 @@ ul.navigation{
 	background-color:#ffffff;
 }
 #slide3 h1 {
-	letter-spacing: -3px;
 	line-height: 0px;
 	font-weight: 700;
     font-size: 2.8em;
@@ -197,7 +189,6 @@ ul.navigation{
 	
 }
 #slide4 h1 {
-	letter-spacing: -3px;
 	line-height: 0px;
 
 	font-weight: 700;
@@ -321,15 +312,13 @@ li{
 }
 
 #slide3 h1 {
-	letter-spacing: -3px;
-	line-height: 0px;
+line-height: 0px;
 	font-weight: 700;
     font-size: 2.4em;
 }
     
 #slide-sago h2 {
   font-size: 1.2em;
-  letter-spacing:-1px;
 }
     
         #slide-sago h1 {
@@ -338,7 +327,6 @@ li{
         
     #slide-sago2 h2 {
       font-size: 1.1em;
-      letter-spacing:-1px;
     }
     
         #slide-sago2 h1 {
@@ -359,7 +347,6 @@ li{
     }
     
     h1,h2{
-        letter-spacing: 2px;
         text-align:center
     }
 
@@ -520,6 +507,3 @@ li{
         width:100%;
     }
 }
-
-
-
