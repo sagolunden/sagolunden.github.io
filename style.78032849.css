@@ -1,0 +1,512 @@
+/* Global */
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 1em;
+	color: #2e2e2e;
+	background-color:#ffffff;
+}
+img {
+	max-width: 100%;
+}
+a:link {
+	color: #f68f67;
+	text-decoration: none;
+}
+a:hover {
+	color: #bde2df;
+	text-decoration: none;
+}
+a:visited {
+	color: #f68f67;
+	text-decoration: none;
+}
+
+p{
+    font-size:1.6em;
+}
+
+ul{
+    font-size: 1.2em;
+}
+
+ul.navigation{
+    font-size: 0.9em;
+}
+
+.facebook{
+    font-size: 3.8em;
+}
+
+
+
+
+/* Navigation */
+
+.menu {
+	position:fixed;
+	top:0px;
+	width:100%; 
+	height: 5em;
+	background-color:#ffffff;
+	z-index:100;
+}
+#logo {
+	text-align: center;
+	margin: 10px 0;
+}
+#nav {
+	text-align: right;
+	margin: 30px 0 0 0;
+}
+.navigation{
+	float: right;
+	list-style: none;
+	margin: 0;
+}
+.navigation li{
+	float: left;
+	padding: 0 0 0 25px;
+}
+.navigation li:hover{
+	cursor:pointer;
+	color: #a9d3d0;
+}
+
+.navigation .active{
+	cursor:pointer;
+	color: #f68f67;
+	font-weight:bold;
+}
+
+
+
+
+/* General Slides */ 
+
+.slide{
+	background-attachment: fixed;
+	width:100%;
+	height:auto;
+	position: relative;
+	padding:140px 0;
+}
+
+
+
+/* Slide 1 */ 
+
+#slide-sago{
+ background-color:white;
+}
+#slide-sago2{
+	
+     background:url('/IMG_2666.12e69c5a.JPG') no-repeat fixed;
+        background-size: cover;
+    background-position: 0px 10.678125px;
+}
+#slide-sago2 h1{
+    font-size: 2.8em;
+	font-weight: 700;
+}
+ #slide-sago h1 {
+	font-size: 3.7em;
+	line-height: 0px;
+	font-weight: 700;
+}
+#slide-sago2 h2,#slide-sago h2 {
+	font-size: 2em;
+	line-height: 0px;
+	padding-bottom:20px;
+	font-weight: 400;
+}
+
+
+
+
+/* Slide 2 */ 
+
+#slide-img{
+	#background:url('/slide2.ba171361.jpg') no-repeat fixed;
+    background:url('/lekplats2.52a6a716.jpg') no-repeat fixed;
+    background-size: cover;
+	background-color:white;
+	color:#ffffff;
+    background-position: 0px 10.678125px;
+}
+#slide-img h1 {
+	line-height: 0px;
+	color:#ffffff;
+	font-weight: 700;
+}
+#slide-img h2 {
+	font-size: 2em;
+	color: #ffffff;
+	line-height: 0px;
+	padding-bottom:20px;
+	font-weight: 400;
+}
+
+
+
+
+/* Slide 3 */ 
+
+#slide3{
+	background-color:#ffffff;
+}
+#slide3 h1 {
+	line-height: 0px;
+	font-weight: 700;
+    font-size: 2.8em;
+}
+#slide3 h2 {
+	font-size: 2em;
+	line-height: 0px;
+	padding-bottom:20px;
+	font-weight: 400;
+}
+#test{
+	background-color:#bde2df;
+	color:#ffffff;
+	text-align:center;
+	font-size: 2em;
+	font-weight: 400;
+}
+
+
+
+
+/* Slide 4 */
+
+#slide4{
+	#background:url('/IMG_2855.ad525ade.jpg') no-repeat fixed;
+    background:url('/lekplats2.52a6a716.jpg') no-repeat fixed;
+     background-size: cover;
+	background-color:#ffffff;
+    #background-position: 0px 10.678125px;
+	
+}
+#slide4 h1 {
+	line-height: 0px;
+
+	font-weight: 700;
+}
+#slide4 h2 {
+	font-size: 2em;
+
+	line-height: 0px;
+	padding-bottom:20px;
+	font-weight: 400;
+}
+
+#slide9{
+	background:url('/IMG_2889.48921e87.jpg') no-repeat fixed;
+    background-size: cover;
+	background-color:#ffffff;
+	
+}
+
+#vslide9{
+	background:url('/IMG_2886.04d2c50e.jpg') no-repeat fixed;
+    background-size: cover;
+	background-color:#ffffff;
+	
+}
+
+#vsslide9{
+	background:url('/verkb.081d938a.png') no-repeat fixed;
+    background-size: cover;
+	background-color:#ffffff;
+}
+
+#gslide9{
+	background:url('/gfb.824c3f78.jpg') no-repeat fixed;
+    background-size: cover;
+	background-color:#ffffff;
+}
+
+
+#pslide9{
+	background:url('/IMG_2873.e90468a7.jpg') no-repeat fixed;
+    background-size: cover;
+	background-color:#ffffff;
+  
+	
+}
+
+#slide9_a{
+	background:url('/IMG_2879l.6e3ec165.jpg') no-repeat fixed;
+    background-size: cover;
+	background-color:#ffffff;
+	
+}
+
+.saga-rub{
+        padding-bottom:2.8em;
+}
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+li{
+    list-style: none;      
+        font-size: 1em;
+}
+    ul{
+    font-size: 1em;
+}
+#logo {
+	width: 100%;
+	text-align: center;
+}
+    
+#logo img{
+    height:3em;
+}
+
+#nav {
+	width:100%;
+	text-align:center;
+	margin:10px 0;
+}
+
+.navigation{
+	width: 100%;
+	float: center;
+	list-style: none;
+	margin: 0;
+	padding:0;
+    visibility:hidden;
+    height:0;
+}
+
+.navigation li{
+	float: left;
+	font-size:1em;
+	padding:0;
+}
+
+.slide{
+	background-attachment: fixed;
+	width:100%;
+	position: relative;
+	padding:150px 0;
+}
+
+#decorative, #bread {
+	display:none;
+        height:0px;
+}
+
+#content {
+	text-align:center;
+	width:100%;
+}
+
+.slide h1 {
+	line-height: 1em;
+}
+.slide h2 {
+	line-height: 1em;
+}
+
+#slide3 h1 {
+line-height: 0px;
+	font-weight: 700;
+    font-size: 2.4em;
+}
+    
+#slide-sago h2 {
+  font-size: 1.2em;
+}
+    
+        #slide-sago h1 {
+      font-size: 1.9em;
+    }
+        
+    #slide-sago2 h2 {
+      font-size: 1.1em;
+    }
+    
+        #slide-sago2 h1 {
+      font-size: 1.6em;
+        
+    }
+        
+    slide-sago h2 {
+        font-size: 1.8em;
+    }
+
+    p{
+        font-size:1.2em;
+    }
+    
+    .grid1, .grid2, .grid3, .grid4, .grid5, .grid6, .grid7, .grid8, .grid9, .grid10, .grid11, .grid12{
+        width:100%;
+    }
+    
+    h1,h2{
+        text-align:center
+    }
+
+    .saga-rub{
+        padding-bottom:0.5em;
+    }
+    .menu {
+        position:fixed;
+        top:0px;
+        width:100%; 
+        height: 4.3em;
+        background-color:#ffffff;
+        z-index:100;
+    }
+}   
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+    ul{
+    font-size: 0.8em;
+}
+#slide3 h1 {
+	letter-spacing: -1px;
+	line-height: 0px;
+	font-weight: 700;
+    font-size: 1.4em;
+}
+    #logo {
+        width: 100%;
+        text-align: center;
+    }
+    
+    #nav {
+        width:100%;
+        margin:5px 0;
+            
+    }
+    
+    .navigation{
+        width: 100%;
+        float: left;
+        list-style: none;
+        margin: 0;
+        padding:0;
+        visibility:hidden;
+        height:0;
+    }
+    
+    .navigation li{
+        float: left;
+        font-size:1em;
+    }
+    
+    .slide{
+        background-attachment: fixed;
+        width:100%;
+        position: relative;
+        padding:150px 0;
+    }
+    
+    
+    .slide h1 {
+        line-height: 1em;
+    }
+    .slide h2 {
+        line-height: 1em;
+    }
+
+        
+    #slide-sago h1 {
+      font-size: 1.8em;
+      text-align:center;
+    }
+        
+    #slide-sago h2 {
+      font-size: 0.6em;
+        letter-spacing:0px;
+    }
+        
+    #slide-sago2 h1 {
+       font-size: 0.8em;
+        letter-spacing:0px;
+    }
+        
+    #slide-sago2 h2 {
+      font-size: 0.6em;
+        letter-spacing:0px;
+    }
+    
+    #decorative-phone {
+	    display:none;
+        height:0px;
+    }
+        
+    p{
+        font-size:1em;
+    }
+ .grid1, .grid2, .grid3, .grid4, .grid5, .grid6, .grid7, .grid8, .grid9, .grid10, .grid11, .grid12{
+        width:100%;
+    }
+     
+    #slide-sago h1, #slide-sago h1, h2{
+        letter-spacing: 0px;
+    }
+    
+    .facebook{
+        font-size: 1.4em;
+    }
+    img.facebook{
+          width: 7%;
+    }
+    
+    #slide-sago2{
+	
+        background:url('/IMG_2666s.22189f5d.jpg') no-repeat;
+        background-size: cover;
+       
+    }
+    
+    #slide9{
+        background:url('/IMG_2889s.8e4699d0.jpg') no-repeat;
+        background-size: cover;
+        background-color:#ffffff;
+        
+    }
+    #slide4{
+       
+        background:url('/lekplats2s.41c7b249.jpg') no-repeat;
+        background-size: cover;
+    }
+    .saga-rub{
+        padding-bottom:0em;
+    }
+    #slide-sago2 p{
+        padding-top:0;
+          margin-top: 0;
+          font-size: 0.8em;
+    }
+    ul{
+        padding:0;
+        margin:0;
+    }
+    #slide-sago h1.gf{
+          font-size: 1.3em;
+    }
+    .menu {
+        position:fixed;
+        top:0px;
+        width:100%; 
+        height: 4em;
+        background-color:#ffffff;
+        z-index:100;
+    }
+}
+
+@media screen {
+    .grid1, .grid2, .grid3, .grid4, .grid5, .grid6, .grid7, .grid8, .grid9, .grid10, .grid11, .grid12{
+        width:100%;
+    }
+}
+
+
+/*# sourceMappingURL=/style.78032849.css.map */
