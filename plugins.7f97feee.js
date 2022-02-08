@@ -122,7 +122,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 (function () {
   var method;
 
-  var noop = function noop() {};
+  var noop = function () {};
 
   var methods = ['assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error', 'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log', 'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd', 'timeline', 'timelineEnd', 'timeStamp', 'trace', 'warn'];
   var length = methods.length;
@@ -164,7 +164,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37297" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "34853" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

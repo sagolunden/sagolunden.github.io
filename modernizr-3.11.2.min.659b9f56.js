@@ -118,13 +118,11 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"js/vendor/modernizr-3.11.2.min.js":[function(require,module,exports) {
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
 /*! modernizr 3.11.2 (Custom Build) | MIT *
  * https://modernizr.com/download/?-cssanimations-csscolumns-customelements-flexbox-history-picture-pointerevents-postmessage-sizes-srcset-webgl-websockets-webworkers-addtest-domprefixes-hasevent-mq-prefixedcssvalue-prefixes-setclasses-testallprops-testprop-teststyles !*/
 !function (e, t, n, r) {
   function o(e, t) {
-    return _typeof(e) === t;
+    return typeof e === t;
   }
 
   function i(e) {
@@ -140,9 +138,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   }
 
   function s(e, t) {
-    if ("object" == _typeof(e)) for (var n in e) {
-      k(e, n) && s(n, e[n]);
-    } else {
+    if ("object" == typeof e) for (var n in e) k(e, n) && s(n, e[n]);else {
       e = e.toLowerCase();
       var r = e.split("."),
           o = Modernizr[r[0]];
@@ -169,9 +165,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         c = "modernizr",
         d = a("div"),
         p = l();
-    if (parseInt(r, 10)) for (; r--;) {
-      u = a("div"), u.id = o ? o[r] : c + (r + 1), d.appendChild(u);
-    }
+    if (parseInt(r, 10)) for (; r--;) u = a("div"), u.id = o ? o[r] : c + (r + 1), d.appendChild(u);
     return i = a("style"), i.type = "text/css", i.id = "s" + c, (p.fake ? p : d).appendChild(i), p.appendChild(d), i.styleSheet ? i.styleSheet.cssText = e : i.appendChild(n.createTextNode(e)), d.id = c, p.fake && (p.style.background = "", p.style.overflow = "hidden", f = _.style.overflow, _.style.overflow = "hidden", _.appendChild(p)), s = t(d, e), p.fake ? (p.parentNode.removeChild(p), _.style.overflow = f, _.offsetHeight) : d.parentNode.removeChild(d), !!s;
   }
 
@@ -204,17 +198,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     var o = e.length;
 
     if ("CSS" in t && "supports" in t.CSS) {
-      for (; o--;) {
-        if (t.CSS.supports(d(e[o]), n)) return !0;
-      }
+      for (; o--;) if (t.CSS.supports(d(e[o]), n)) return !0;
 
       return !1;
     }
 
     if ("CSSSupportsRule" in t) {
-      for (var i = []; o--;) {
-        i.push("(" + d(e[o]) + ":" + n + ")");
-      }
+      for (var i = []; o--;) i.push("(" + d(e[o]) + ":" + n + ")");
 
       return i = i.join(" or "), u("@supports (" + i + ") { #modernizr { position: absolute; } }", function (e) {
         return "absolute" === f(e, null, "position");
@@ -240,20 +230,16 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       if (!o(l, "undefined")) return l;
     }
 
-    for (var u, f, d, h, A, v = ["modernizr", "tspan", "samp"]; !N.style && v.length;) {
-      u = !0, N.modElem = a(v.shift()), N.style = N.modElem.style;
-    }
+    for (var u, f, d, h, A, v = ["modernizr", "tspan", "samp"]; !N.style && v.length;) u = !0, N.modElem = a(v.shift()), N.style = N.modElem.style;
 
-    for (d = e.length, f = 0; f < d; f++) {
-      if (h = e[f], A = N.style[h], c(h, "-") && (h = m(h)), N.style[h] !== r) {
-        if (i || o(n, "undefined")) return s(), "pfx" !== t || h;
+    for (d = e.length, f = 0; f < d; f++) if (h = e[f], A = N.style[h], c(h, "-") && (h = m(h)), N.style[h] !== r) {
+      if (i || o(n, "undefined")) return s(), "pfx" !== t || h;
 
-        try {
-          N.style[h] = n;
-        } catch (e) {}
+      try {
+        N.style[h] = n;
+      } catch (e) {}
 
-        if (N.style[h] !== A) return s(), "pfx" !== t || h;
-      }
+      if (N.style[h] !== A) return s(), "pfx" !== t || h;
     }
 
     return s(), !1;
@@ -268,9 +254,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   function v(e, t, n) {
     var r;
 
-    for (var i in e) {
-      if (e[i] in t) return !1 === n ? e[i] : (r = t[e[i]], o(r, "function") ? A(r, n || t) : r);
-    }
+    for (var i in e) if (e[i] in t) return !1 === n ? e[i] : (r = t[e[i]], o(r, "function") ? A(r, n || t) : r);
 
     return !1;
   }
@@ -295,27 +279,27 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       usePrefixes: !0
     },
     _q: [],
-    on: function on(e, t) {
+    on: function (e, t) {
       var n = this;
       setTimeout(function () {
         t(n[e]);
       }, 0);
     },
-    addTest: function addTest(e, t, n) {
+    addTest: function (e, t, n) {
       w.push({
         name: e,
         fn: t,
         options: n
       });
     },
-    addAsyncTest: function addAsyncTest(e) {
+    addAsyncTest: function (e) {
       w.push({
         name: null,
         fn: e
       });
     }
   },
-      Modernizr = function Modernizr() {};
+      Modernizr = function () {};
 
   Modernizr.prototype = C, Modernizr = new Modernizr();
 
@@ -346,9 +330,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       setTimeout(function () {
         var e;
 
-        for (e = 0; e < n.length; e++) {
-          (0, n[e])(t);
-        }
+        for (e = 0; e < n.length; e++) (0, n[e])(t);
       }, 0), delete this._l[e];
     }
   }, Modernizr._q.push(function () {
@@ -382,7 +364,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
   C.mq = B;
 
-  var z = function z(e, t) {
+  var z = function (e, t) {
     var n = !1,
         r = a("div"),
         o = r.style;
@@ -390,9 +372,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     if (e in o) {
       var i = T.length;
 
-      for (o[e] = t, n = o[e]; i-- && !n;) {
-        o[e] = "-" + T[i] + "-" + t, n = o[e];
-      }
+      for (o[e] = t, n = o[e]; i-- && !n;) o[e] = "-" + T[i] + "-" + t, n = o[e];
     }
 
     return "" === n && (n = !1), n;
@@ -424,9 +404,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   });
   var R = [""].concat(T);
   C._domPrefixesAll = R, Modernizr.addTest("pointerevents", function () {
-    for (var e = 0, t = R.length; e < t; e++) {
-      if (E(R[e] + "pointerdown")) return !0;
-    }
+    for (var e = 0, t = R.length; e < t; e++) if (E(R[e] + "pointerdown")) return !0;
 
     return !1;
   });
@@ -434,7 +412,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
   try {
     t.postMessage({
-      toString: function toString() {
+      toString: function () {
         j = !1;
       }
     }, "*");
@@ -461,37 +439,27 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       return e;
     });
 
-    for (var e, t, n = ["Width", "Span", "Fill", "Gap", "Rule", "RuleColor", "RuleStyle", "RuleWidth", "BreakBefore", "BreakAfter", "BreakInside"], r = 0; r < n.length; r++) {
-      e = n[r].toLowerCase(), t = y("column" + n[r]), "breakbefore" !== e && "breakafter" !== e && "breakinside" !== e || (t = t || y(n[r])), Modernizr.addTest("csscolumns." + e, t);
-    }
+    for (var e, t, n = ["Width", "Span", "Fill", "Gap", "Rule", "RuleColor", "RuleStyle", "RuleWidth", "BreakBefore", "BreakAfter", "BreakInside"], r = 0; r < n.length; r++) e = n[r].toLowerCase(), t = y("column" + n[r]), "breakbefore" !== e && "breakafter" !== e && "breakinside" !== e || (t = t || y(n[r])), Modernizr.addTest("csscolumns." + e, t);
   }(), Modernizr.addTest("flexbox", y("flexBasis", "1px", !0)), Modernizr.addTest("picture", "HTMLPictureElement" in t), Modernizr.addAsyncTest(function () {
     var e,
         t,
         n,
         r = a("img"),
         o = ("sizes" in r);
-    !o && "srcset" in r ? (t = "data:image/gif;base64,R0lGODlhAgABAPAAAP///wAAACH5BAAAAAAALAAAAAACAAEAAAICBAoAOw==", e = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", n = function n() {
+    !o && "srcset" in r ? (t = "data:image/gif;base64,R0lGODlhAgABAPAAAP///wAAACH5BAAAAAAALAAAAAACAAEAAAICBAoAOw==", e = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==", n = function () {
       s("sizes", 2 === r.width);
     }, r.onload = n, r.onerror = n, r.setAttribute("sizes", "9px"), r.srcset = e + " 1w," + t + " 8w", r.src = e) : s("sizes", o);
   }), Modernizr.addTest("srcset", "srcset" in a("img")), Modernizr.addTest("webworkers", "Worker" in t), function () {
     var e, t, n, r, i, s, a;
 
-    for (var l in w) {
-      if (w.hasOwnProperty(l)) {
-        if (e = [], t = w[l], t.name && (e.push(t.name.toLowerCase()), t.options && t.options.aliases && t.options.aliases.length)) for (n = 0; n < t.options.aliases.length; n++) {
-          e.push(t.options.aliases[n].toLowerCase());
-        }
+    for (var l in w) if (w.hasOwnProperty(l)) {
+      if (e = [], t = w[l], t.name && (e.push(t.name.toLowerCase()), t.options && t.options.aliases && t.options.aliases.length)) for (n = 0; n < t.options.aliases.length; n++) e.push(t.options.aliases[n].toLowerCase());
 
-        for (r = o(t.fn, "function") ? t.fn() : t.fn, i = 0; i < e.length; i++) {
-          s = e[i], a = s.split("."), 1 === a.length ? Modernizr[a[0]] = r : (Modernizr[a[0]] && (!Modernizr[a[0]] || Modernizr[a[0]] instanceof Boolean) || (Modernizr[a[0]] = new Boolean(Modernizr[a[0]])), Modernizr[a[0]][a[1]] = r), b.push((r ? "" : "no-") + a.join("-"));
-        }
-      }
+      for (r = o(t.fn, "function") ? t.fn() : t.fn, i = 0; i < e.length; i++) s = e[i], a = s.split("."), 1 === a.length ? Modernizr[a[0]] = r : (Modernizr[a[0]] && (!Modernizr[a[0]] || Modernizr[a[0]] instanceof Boolean) || (Modernizr[a[0]] = new Boolean(Modernizr[a[0]])), Modernizr[a[0]][a[1]] = r), b.push((r ? "" : "no-") + a.join("-"));
     }
   }(), i(b), delete C.addTest, delete C.addAsyncTest;
 
-  for (var W = 0; W < Modernizr._q.length; W++) {
-    Modernizr._q[W]();
-  }
+  for (var W = 0; W < Modernizr._q.length; W++) Modernizr._q[W]();
 
   e.Modernizr = Modernizr;
 }(window, window, document);
@@ -523,7 +491,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37297" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "34853" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

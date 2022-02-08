@@ -119,8 +119,6 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"js/vendor/jquery/1.7.2/jquery.min.js":[function(require,module,exports) {
 var define;
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
 /*! jQuery v1.7.2 jquery.com | jquery.org/license */
 (function (a, b) {
   function cy(a) {
@@ -191,9 +189,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         p;
 
     for (g = 1; g < i; g++) {
-      if (g === 1) for (h in a.converters) {
-        typeof h == "string" && (e[h.toLowerCase()] = a.converters[h]);
-      }
+      if (g === 1) for (h in a.converters) typeof h == "string" && (e[h.toLowerCase()] = a.converters[h]);
       l = k, k = d[g];
       if (k === "*") k = l;else if (l !== "*" && l !== k) {
         m = l + " " + k, n = e[m] || e["* " + k];
@@ -231,19 +227,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         j,
         k;
 
-    for (i in g) {
-      i in d && (c[g[i]] = d[i]);
-    }
+    for (i in g) i in d && (c[g[i]] = d[i]);
 
-    while (f[0] === "*") {
-      f.shift(), h === b && (h = a.mimeType || c.getResponseHeader("content-type"));
-    }
+    while (f[0] === "*") f.shift(), h === b && (h = a.mimeType || c.getResponseHeader("content-type"));
 
-    if (h) for (i in e) {
-      if (e[i] && e[i].test(h)) {
-        f.unshift(i);
-        break;
-      }
+    if (h) for (i in e) if (e[i] && e[i].test(h)) {
+      f.unshift(i);
+      break;
     }
     if (f[0] in d) j = f[0];else {
       for (i in d) {
@@ -266,10 +256,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
   function b_(a, b, c, d) {
     if (f.isArray(b)) f.each(b, function (b, e) {
-      c || bD.test(a) ? d(a, e) : b_(a + "[" + (_typeof(e) == "object" ? b : "") + "]", e, c, d);
-    });else if (!c && f.type(b) === "object") for (var e in b) {
-      b_(a + "[" + e + "]", b[e], c, d);
-    } else d(a, b);
+      c || bD.test(a) ? d(a, e) : b_(a + "[" + (typeof e == "object" ? b : "") + "]", e, c, d);
+    });else if (!c && f.type(b) === "object") for (var e in b) b_(a + "[" + e + "]", b[e], c, d);else d(a, b);
   }
 
   function b$(a, c) {
@@ -277,9 +265,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         e,
         g = f.ajaxSettings.flatOptions || {};
 
-    for (d in c) {
-      c[d] !== b && ((g[d] ? a : e || (e = {}))[d] = c[d]);
-    }
+    for (d in c) c[d] !== b && ((g[d] ? a : e || (e = {}))[d] = c[d]);
 
     e && f.extend(!0, a, e);
   }
@@ -292,9 +278,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         k = a === bS,
         l;
 
-    for (; i < j && (k || !l); i++) {
-      l = h[i](c, d, e), typeof l == "string" && (!k || g[l] ? l = b : (c.dataTypes.unshift(l), l = bZ(a, c, d, e, l, g)));
-    }
+    for (; i < j && (k || !l); i++) l = h[i](c, d, e), typeof l == "string" && (!k || g[l] ? l = b : (c.dataTypes.unshift(l), l = bZ(a, c, d, e, l, g)));
 
     (k || !l) && !g["*"] && (l = bZ(a, c, d, e, "*", g));
     return l;
@@ -312,9 +296,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
             i,
             j;
 
-        for (; e < g; e++) {
-          h = d[e], j = /^\+/.test(h), j && (h = h.substr(1) || "*"), i = a[h] = a[h] || [], i[j ? "unshift" : "push"](c);
-        }
+        for (; e < g; e++) h = d[e], j = /^\+/.test(h), j && (h = h.substr(1) || "*"), i = a[h] = a[h] || [], i[j ? "unshift" : "push"](c);
       }
     };
   }
@@ -325,9 +307,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         g = 4;
 
     if (d > 0) {
-      if (c !== "border") for (; e < g; e += 2) {
-        c || (d -= parseFloat(f.css(a, "padding" + bx[e])) || 0), c === "margin" ? d += parseFloat(f.css(a, c + bx[e])) || 0 : d -= parseFloat(f.css(a, "border" + bx[e] + "Width")) || 0;
-      }
+      if (c !== "border") for (; e < g; e += 2) c || (d -= parseFloat(f.css(a, "padding" + bx[e])) || 0), c === "margin" ? d += parseFloat(f.css(a, c + bx[e])) || 0 : d -= parseFloat(f.css(a, "border" + bx[e] + "Width")) || 0;
       return d + "px";
     }
 
@@ -335,9 +315,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     if (d < 0 || d == null) d = a.style[b];
     if (bt.test(d)) return d;
     d = parseFloat(d) || 0;
-    if (c) for (; e < g; e += 2) {
-      d += parseFloat(f.css(a, "padding" + bx[e])) || 0, c !== "padding" && (d += parseFloat(f.css(a, "border" + bx[e] + "Width")) || 0), c === "margin" && (d += parseFloat(f.css(a, c + bx[e])) || 0);
-    }
+    if (c) for (; e < g; e += 2) d += parseFloat(f.css(a, "padding" + bx[e])) || 0, c !== "padding" && (d += parseFloat(f.css(a, "border" + bx[e] + "Width")) || 0), c === "margin" && (d += parseFloat(f.css(a, c + bx[e])) || 0);
     return d + "px";
   }
 
@@ -377,11 +355,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       if (i) {
         delete h.handle, h.events = {};
 
-        for (c in i) {
-          for (d = 0, e = i[c].length; d < e; d++) {
-            f.event.add(b, c, i[c][d]);
-          }
-        }
+        for (c in i) for (d = 0, e = i[c].length; d < e; d++) f.event.add(b, c, i[c][d]);
       }
 
       h.data && (h.data = f.extend({}, h.data));
@@ -395,9 +369,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   function U(a) {
     var b = V.split("|"),
         c = a.createDocumentFragment();
-    if (c.createElement) while (b.length) {
-      c.createElement(b.pop());
-    }
+    if (c.createElement) while (b.length) c.createElement(b.pop());
     return c;
   }
 
@@ -479,9 +451,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         d;
     a = a.split(/\s+/);
 
-    for (c = 0, d = a.length; c < d; c++) {
-      b[a[c]] = !0;
-    }
+    for (c = 0, d = a.length; c < d; c++) b[a[c]] = !0;
 
     return b;
   }
@@ -503,7 +473,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
     }
 
-    var e = function e(a, b) {
+    var e = function (a, b) {
       return new e.fn.init(a, b, h);
     },
         f = a.jQuery,
@@ -524,13 +494,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         u = /(mozilla)(?:.*? rv:([\w.]+))?/,
         v = /-([a-z]|[0-9])/ig,
         w = /^-ms-/,
-        x = function x(a, b) {
+        x = function (a, b) {
       return (b + "").toUpperCase();
     },
         y = d.userAgent,
         z,
         A,
-        _B2,
+        B,
         C = Object.prototype.toString,
         D = Object.prototype.hasOwnProperty,
         E = Array.prototype.push,
@@ -541,7 +511,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
     e.fn = e.prototype = {
       constructor: e,
-      init: function init(a, d, f) {
+      init: function (a, d, f) {
         var g, h, j, k;
         if (!a) return this;
 
@@ -585,46 +555,46 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       selector: "",
       jquery: "1.7.2",
       length: 0,
-      size: function size() {
+      size: function () {
         return this.length;
       },
-      toArray: function toArray() {
+      toArray: function () {
         return F.call(this, 0);
       },
-      get: function get(a) {
+      get: function (a) {
         return a == null ? this.toArray() : a < 0 ? this[this.length + a] : this[a];
       },
-      pushStack: function pushStack(a, b, c) {
+      pushStack: function (a, b, c) {
         var d = this.constructor();
         e.isArray(a) ? E.apply(d, a) : e.merge(d, a), d.prevObject = this, d.context = this.context, b === "find" ? d.selector = this.selector + (this.selector ? " " : "") + c : b && (d.selector = this.selector + "." + b + "(" + c + ")");
         return d;
       },
-      each: function each(a, b) {
+      each: function (a, b) {
         return e.each(this, a, b);
       },
-      ready: function ready(a) {
+      ready: function (a) {
         e.bindReady(), A.add(a);
         return this;
       },
-      eq: function eq(a) {
+      eq: function (a) {
         a = +a;
         return a === -1 ? this.slice(a) : this.slice(a, a + 1);
       },
-      first: function first() {
+      first: function () {
         return this.eq(0);
       },
-      last: function last() {
+      last: function () {
         return this.eq(-1);
       },
-      slice: function slice() {
+      slice: function () {
         return this.pushStack(F.apply(this, arguments), "slice", F.call(arguments).join(","));
       },
-      map: function map(a) {
+      map: function (a) {
         return this.pushStack(e.map(this, function (b, c) {
           return a.call(b, c, b);
         }));
       },
-      end: function end() {
+      end: function () {
         return this.prevObject || this.constructor(null);
       },
       push: E,
@@ -641,28 +611,26 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           j = 1,
           k = arguments.length,
           l = !1;
-      typeof i == "boolean" && (l = i, i = arguments[1] || {}, j = 2), _typeof(i) != "object" && !e.isFunction(i) && (i = {}), k === j && (i = this, --j);
+      typeof i == "boolean" && (l = i, i = arguments[1] || {}, j = 2), typeof i != "object" && !e.isFunction(i) && (i = {}), k === j && (i = this, --j);
 
-      for (; j < k; j++) {
-        if ((a = arguments[j]) != null) for (c in a) {
-          d = i[c], f = a[c];
-          if (i === f) continue;
-          l && f && (e.isPlainObject(f) || (g = e.isArray(f))) ? (g ? (g = !1, h = d && e.isArray(d) ? d : []) : h = d && e.isPlainObject(d) ? d : {}, i[c] = e.extend(l, h, f)) : f !== b && (i[c] = f);
-        }
+      for (; j < k; j++) if ((a = arguments[j]) != null) for (c in a) {
+        d = i[c], f = a[c];
+        if (i === f) continue;
+        l && f && (e.isPlainObject(f) || (g = e.isArray(f))) ? (g ? (g = !1, h = d && e.isArray(d) ? d : []) : h = d && e.isPlainObject(d) ? d : {}, i[c] = e.extend(l, h, f)) : f !== b && (i[c] = f);
       }
 
       return i;
     }, e.extend({
-      noConflict: function noConflict(b) {
+      noConflict: function (b) {
         a.$ === e && (a.$ = g), b && a.jQuery === e && (a.jQuery = f);
         return e;
       },
       isReady: !1,
       readyWait: 1,
-      holdReady: function holdReady(a) {
+      holdReady: function (a) {
         a ? e.readyWait++ : e.ready(!0);
       },
-      ready: function ready(a) {
+      ready: function (a) {
         if (a === !0 && ! --e.readyWait || a !== !0 && !e.isReady) {
           if (!c.body) return setTimeout(e.ready, 1);
           e.isReady = !0;
@@ -670,12 +638,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           A.fireWith(c, [e]), e.fn.trigger && e(c).trigger("ready").off("ready");
         }
       },
-      bindReady: function bindReady() {
+      bindReady: function () {
         if (!A) {
           A = e.Callbacks("once memory");
           if (c.readyState === "complete") return setTimeout(e.ready, 1);
-          if (c.addEventListener) c.addEventListener("DOMContentLoaded", _B2, !1), a.addEventListener("load", e.ready, !1);else if (c.attachEvent) {
-            c.attachEvent("onreadystatechange", _B2), a.attachEvent("onload", e.ready);
+          if (c.addEventListener) c.addEventListener("DOMContentLoaded", B, !1), a.addEventListener("load", e.ready, !1);else if (c.attachEvent) {
+            c.attachEvent("onreadystatechange", B), a.attachEvent("onload", e.ready);
             var b = !1;
 
             try {
@@ -686,22 +654,22 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           }
         }
       },
-      isFunction: function isFunction(a) {
+      isFunction: function (a) {
         return e.type(a) === "function";
       },
       isArray: Array.isArray || function (a) {
         return e.type(a) === "array";
       },
-      isWindow: function isWindow(a) {
+      isWindow: function (a) {
         return a != null && a == a.window;
       },
-      isNumeric: function isNumeric(a) {
+      isNumeric: function (a) {
         return !isNaN(parseFloat(a)) && isFinite(a);
       },
-      type: function type(a) {
+      type: function (a) {
         return a == null ? String(a) : I[C.call(a)] || "object";
       },
-      isPlainObject: function isPlainObject(a) {
+      isPlainObject: function (a) {
         if (!a || e.type(a) !== "object" || a.nodeType || e.isWindow(a)) return !1;
 
         try {
@@ -712,30 +680,26 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
         var d;
 
-        for (d in a) {
-          ;
-        }
+        for (d in a);
 
         return d === b || D.call(a, d);
       },
-      isEmptyObject: function isEmptyObject(a) {
-        for (var b in a) {
-          return !1;
-        }
+      isEmptyObject: function (a) {
+        for (var b in a) return !1;
 
         return !0;
       },
-      error: function error(a) {
+      error: function (a) {
         throw new Error(a);
       },
-      parseJSON: function parseJSON(b) {
+      parseJSON: function (b) {
         if (typeof b != "string" || !b) return null;
         b = e.trim(b);
         if (a.JSON && a.JSON.parse) return a.JSON.parse(b);
         if (n.test(b.replace(o, "@").replace(p, "]").replace(q, ""))) return new Function("return " + b)();
         e.error("Invalid JSON: " + b);
       },
-      parseXML: function parseXML(c) {
+      parseXML: function (c) {
         if (typeof c != "string" || !c) return null;
         var d, f;
 
@@ -748,19 +712,19 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         (!d || !d.documentElement || d.getElementsByTagName("parsererror").length) && e.error("Invalid XML: " + c);
         return d;
       },
-      noop: function noop() {},
-      globalEval: function globalEval(b) {
+      noop: function () {},
+      globalEval: function (b) {
         b && j.test(b) && (a.execScript || function (b) {
           a.eval.call(a, b);
         })(b);
       },
-      camelCase: function camelCase(a) {
+      camelCase: function (a) {
         return a.replace(w, "ms-").replace(v, x);
       },
-      nodeName: function nodeName(a, b) {
+      nodeName: function (a, b) {
         return a.nodeName && a.nodeName.toUpperCase() === b.toUpperCase();
       },
-      each: function each(a, c, d) {
+      each: function (a, c, d) {
         var f,
             g = 0,
             h = a.length,
@@ -768,19 +732,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
         if (d) {
           if (i) {
-            for (f in a) {
-              if (c.apply(a[f], d) === !1) break;
-            }
-          } else for (; g < h;) {
-            if (c.apply(a[g++], d) === !1) break;
-          }
+            for (f in a) if (c.apply(a[f], d) === !1) break;
+          } else for (; g < h;) if (c.apply(a[g++], d) === !1) break;
         } else if (i) {
-          for (f in a) {
-            if (c.call(a[f], f, a[f]) === !1) break;
-          }
-        } else for (; g < h;) {
-          if (c.call(a[g], g, a[g++]) === !1) break;
-        }
+          for (f in a) if (c.call(a[f], f, a[f]) === !1) break;
+        } else for (; g < h;) if (c.call(a[g], g, a[g++]) === !1) break;
 
         return a;
       },
@@ -789,7 +745,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       } : function (a) {
         return a == null ? "" : (a + "").replace(k, "").replace(l, "");
       },
-      makeArray: function makeArray(a, b) {
+      makeArray: function (a, b) {
         var c = b || [];
 
         if (a != null) {
@@ -799,58 +755,46 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
         return c;
       },
-      inArray: function inArray(a, b, c) {
+      inArray: function (a, b, c) {
         var d;
 
         if (b) {
           if (H) return H.call(b, a, c);
           d = b.length, c = c ? c < 0 ? Math.max(0, d + c) : c : 0;
 
-          for (; c < d; c++) {
-            if (c in b && b[c] === a) return c;
-          }
+          for (; c < d; c++) if (c in b && b[c] === a) return c;
         }
 
         return -1;
       },
-      merge: function merge(a, c) {
+      merge: function (a, c) {
         var d = a.length,
             e = 0;
-        if (typeof c.length == "number") for (var f = c.length; e < f; e++) {
-          a[d++] = c[e];
-        } else while (c[e] !== b) {
-          a[d++] = c[e++];
-        }
+        if (typeof c.length == "number") for (var f = c.length; e < f; e++) a[d++] = c[e];else while (c[e] !== b) a[d++] = c[e++];
         a.length = d;
         return a;
       },
-      grep: function grep(a, b, c) {
+      grep: function (a, b, c) {
         var d = [],
             e;
         c = !!c;
 
-        for (var f = 0, g = a.length; f < g; f++) {
-          e = !!b(a[f], f), c !== e && d.push(a[f]);
-        }
+        for (var f = 0, g = a.length; f < g; f++) e = !!b(a[f], f), c !== e && d.push(a[f]);
 
         return d;
       },
-      map: function map(a, c, d) {
+      map: function (a, c, d) {
         var f,
             g,
             h = [],
             i = 0,
             j = a.length,
             k = a instanceof e || j !== b && typeof j == "number" && (j > 0 && a[0] && a[j - 1] || j === 0 || e.isArray(a));
-        if (k) for (; i < j; i++) {
-          f = c(a[i], i, d), f != null && (h[h.length] = f);
-        } else for (g in a) {
-          f = c(a[g], g, d), f != null && (h[h.length] = f);
-        }
+        if (k) for (; i < j; i++) f = c(a[i], i, d), f != null && (h[h.length] = f);else for (g in a) f = c(a[g], g, d), f != null && (h[h.length] = f);
         return h.concat.apply([], h);
       },
       guid: 1,
-      proxy: function proxy(a, c) {
+      proxy: function (a, c) {
         if (typeof c == "string") {
           var d = a[c];
           c = a, a = d;
@@ -859,41 +803,37 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         if (!e.isFunction(a)) return b;
 
         var f = F.call(arguments, 2),
-            g = function g() {
+            g = function () {
           return a.apply(c, f.concat(F.call(arguments)));
         };
 
         g.guid = a.guid = a.guid || g.guid || e.guid++;
         return g;
       },
-      access: function access(a, c, d, f, g, h, i) {
+      access: function (a, c, d, f, g, h, i) {
         var j,
             k = d == null,
             l = 0,
             m = a.length;
 
-        if (d && _typeof(d) == "object") {
-          for (l in d) {
-            e.access(a, c, l, d[l], 1, h, f);
-          }
+        if (d && typeof d == "object") {
+          for (l in d) e.access(a, c, l, d[l], 1, h, f);
 
           g = 1;
         } else if (f !== b) {
-          j = i === b && e.isFunction(f), k && (j ? (j = c, c = function c(a, b, _c) {
-            return j.call(e(a), _c);
+          j = i === b && e.isFunction(f), k && (j ? (j = c, c = function (a, b, c) {
+            return j.call(e(a), c);
           }) : (c.call(a, f), c = null));
-          if (c) for (; l < m; l++) {
-            c(a[l], d, j ? f.call(a[l], l, c(a[l], d)) : f, i);
-          }
+          if (c) for (; l < m; l++) c(a[l], d, j ? f.call(a[l], l, c(a[l], d)) : f, i);
           g = 1;
         }
 
         return g ? a : k ? c.call(a) : m ? c(a[0], d) : h;
       },
-      now: function now() {
+      now: function () {
         return new Date().getTime();
       },
-      uaMatch: function uaMatch(a) {
+      uaMatch: function (a) {
         a = a.toLowerCase();
         var b = r.exec(a) || s.exec(a) || t.exec(a) || a.indexOf("compatible") < 0 && u.exec(a) || [];
         return {
@@ -901,7 +841,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           version: b[2] || "0"
         };
       },
-      sub: function sub() {
+      sub: function () {
         function a(b, c) {
           return new a.fn.init(b, c);
         }
@@ -916,10 +856,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       browser: {}
     }), e.each("Boolean Number String Function Array Date RegExp Object".split(" "), function (a, b) {
       I["[object " + b + "]"] = b.toLowerCase();
-    }), z = e.uaMatch(y), z.browser && (e.browser[z.browser] = !0, e.browser.version = z.version), e.browser.webkit && (e.browser.safari = !0), j.test(" ") && (k = /^[\s\xA0]+/, l = /[\s\xA0]+$/), h = e(c), c.addEventListener ? _B2 = function B() {
-      c.removeEventListener("DOMContentLoaded", _B2, !1), e.ready();
-    } : c.attachEvent && (_B2 = function _B() {
-      c.readyState === "complete" && (c.detachEvent("onreadystatechange", _B2), e.ready());
+    }), z = e.uaMatch(y), z.browser && (e.browser[z.browser] = !0, e.browser.version = z.version), e.browser.webkit && (e.browser.safari = !0), j.test(" ") && (k = /^[\s\xA0]+/, l = /[\s\xA0]+$/), h = e(c), c.addEventListener ? B = function () {
+      c.removeEventListener("DOMContentLoaded", B, !1), e.ready();
+    } : c.attachEvent && (B = function () {
+      c.readyState === "complete" && (c.detachEvent("onreadystatechange", B), e.ready());
     });
     return e;
   }(),
@@ -936,27 +876,23 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         k,
         l,
         m,
-        n = function n(b) {
+        n = function (b) {
       var d, e, g, h, i;
 
-      for (d = 0, e = b.length; d < e; d++) {
-        g = b[d], h = f.type(g), h === "array" ? n(g) : h === "function" && (!a.unique || !p.has(g)) && c.push(g);
-      }
+      for (d = 0, e = b.length; d < e; d++) g = b[d], h = f.type(g), h === "array" ? n(g) : h === "function" && (!a.unique || !p.has(g)) && c.push(g);
     },
-        o = function o(b, f) {
+        o = function (b, f) {
       f = f || [], e = !a.memory || [b, f], i = !0, j = !0, m = k || 0, k = 0, l = c.length;
 
-      for (; c && m < l; m++) {
-        if (c[m].apply(b, f) === !1 && a.stopOnFalse) {
-          e = !0;
-          break;
-        }
+      for (; c && m < l; m++) if (c[m].apply(b, f) === !1 && a.stopOnFalse) {
+        e = !0;
+        break;
       }
 
       j = !1, c && (a.once ? e === !0 ? p.disable() : c = [] : d && d.length && (e = d.shift(), p.fireWith(e[0], e[1])));
     },
         p = {
-      add: function add() {
+      add: function () {
         if (c) {
           var a = c.length;
           n(arguments), j ? l = c.length : e && e !== !0 && (k = a, o(e[0], e[1]));
@@ -964,63 +900,57 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
         return this;
       },
-      remove: function remove() {
+      remove: function () {
         if (c) {
           var b = arguments,
               d = 0,
               e = b.length;
 
-          for (; d < e; d++) {
-            for (var f = 0; f < c.length; f++) {
-              if (b[d] === c[f]) {
-                j && f <= l && (l--, f <= m && m--), c.splice(f--, 1);
-                if (a.unique) break;
-              }
-            }
+          for (; d < e; d++) for (var f = 0; f < c.length; f++) if (b[d] === c[f]) {
+            j && f <= l && (l--, f <= m && m--), c.splice(f--, 1);
+            if (a.unique) break;
           }
         }
 
         return this;
       },
-      has: function has(a) {
+      has: function (a) {
         if (c) {
           var b = 0,
               d = c.length;
 
-          for (; b < d; b++) {
-            if (a === c[b]) return !0;
-          }
+          for (; b < d; b++) if (a === c[b]) return !0;
         }
 
         return !1;
       },
-      empty: function empty() {
+      empty: function () {
         c = [];
         return this;
       },
-      disable: function disable() {
+      disable: function () {
         c = d = e = b;
         return this;
       },
-      disabled: function disabled() {
+      disabled: function () {
         return !c;
       },
-      lock: function lock() {
+      lock: function () {
         d = b, (!e || e === !0) && p.disable();
         return this;
       },
-      locked: function locked() {
+      locked: function () {
         return !d;
       },
-      fireWith: function fireWith(b, c) {
+      fireWith: function (b, c) {
         d && (j ? a.once || d.push([b, c]) : (!a.once || !e) && o(b, c));
         return this;
       },
-      fire: function fire() {
+      fire: function () {
         p.fireWith(this, arguments);
         return this;
       },
-      fired: function fired() {
+      fired: function () {
         return !!i;
       }
     };
@@ -1030,7 +960,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
   var i = [].slice;
   f.extend({
-    Deferred: function Deferred(a) {
+    Deferred: function (a) {
       var b = f.Callbacks("once memory"),
           c = f.Callbacks("once memory"),
           d = f.Callbacks("memory"),
@@ -1044,20 +974,20 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         done: b.add,
         fail: c.add,
         progress: d.add,
-        state: function state() {
+        state: function () {
           return e;
         },
         isResolved: b.fired,
         isRejected: c.fired,
-        then: function then(a, b, c) {
+        then: function (a, b, c) {
           i.done(a).fail(b).progress(c);
           return this;
         },
-        always: function always() {
+        always: function () {
           i.done.apply(i, arguments).fail.apply(i, arguments);
           return this;
         },
-        pipe: function pipe(a, b, c) {
+        pipe: function (a, b, c) {
           return f.Deferred(function (d) {
             f.each({
               done: [a, "resolve"],
@@ -1073,19 +1003,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
             });
           }).promise();
         },
-        promise: function promise(a) {
-          if (a == null) a = h;else for (var b in h) {
-            a[b] = h[b];
-          }
+        promise: function (a) {
+          if (a == null) a = h;else for (var b in h) a[b] = h[b];
           return a;
         }
       },
           i = h.promise({}),
           j;
 
-      for (j in g) {
-        i[j] = g[j].fire, i[j + "With"] = g[j].fireWith;
-      }
+      for (j in g) i[j] = g[j].fire, i[j + "With"] = g[j].fireWith;
 
       i.done(function () {
         e = "resolved";
@@ -1094,7 +1020,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }, b.disable, d.lock), a && a.call(i, i);
       return i;
     },
-    when: function when(a) {
+    when: function (a) {
       function m(a) {
         return function (b) {
           e[a] = arguments.length > 1 ? i.call(arguments, 0) : b, j.notifyWith(k, e);
@@ -1117,9 +1043,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           k = j.promise();
 
       if (d > 1) {
-        for (; c < d; c++) {
-          b[c] && b[c].promise && f.isFunction(b[c].promise) ? b[c].promise().then(l(c), j.reject, m(c)) : --g;
-        }
+        for (; c < d; c++) b[c] && b[c].promise && f.isFunction(b[c].promise) ? b[c].promise().then(l(c), j.reject, m(c)) : --g;
 
         g || j.resolveWith(j, b);
       } else j !== a && j.resolveWith(j, d ? [a] : []);
@@ -1180,9 +1104,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       submit: 1,
       change: 1,
       focusin: 1
-    }) {
-      m = "on" + n, o = m in p, o || (p.setAttribute(m, "return;"), o = typeof p[m] == "function"), b[n + "Bubbles"] = o;
-    }
+    }) m = "on" + n, o = m in p, o || (p.setAttribute(m, "return;"), o = typeof p[m] == "function"), b[n + "Bubbles"] = o;
     j.removeChild(p), j = g = h = p = i = null, f(function () {
       var d,
           e,
@@ -1220,11 +1142,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       object: "clsid:D27CDB6E-AE6D-11cf-96B8-444553540000",
       applet: !0
     },
-    hasData: function hasData(a) {
+    hasData: function (a) {
       a = a.nodeType ? f.cache[a[f.expando]] : a[f.expando];
       return !!a && !m(a);
     },
-    data: function data(a, c, d, e) {
+    data: function (a, c, d, e) {
       if (!!f.acceptData(a)) {
         var g,
             h,
@@ -1237,14 +1159,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
             o = c === "events";
         if ((!n || !m[n] || !o && !e && !m[n].data) && k && d === b) return;
         n || (l ? a[j] = n = ++f.uuid : n = j), m[n] || (m[n] = {}, l || (m[n].toJSON = f.noop));
-        if (_typeof(c) == "object" || typeof c == "function") e ? m[n] = f.extend(m[n], c) : m[n].data = f.extend(m[n].data, c);
+        if (typeof c == "object" || typeof c == "function") e ? m[n] = f.extend(m[n], c) : m[n].data = f.extend(m[n].data, c);
         g = h = m[n], e || (h.data || (h.data = {}), h = h.data), d !== b && (h[f.camelCase(c)] = d);
         if (o && !h[c]) return g.events;
         k ? (i = h[c], i == null && (i = h[f.camelCase(c)])) : i = h;
         return i;
       }
     },
-    removeData: function removeData(a, b, c) {
+    removeData: function (a, b, c) {
       if (!!f.acceptData(a)) {
         var d,
             e,
@@ -1261,9 +1183,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           if (d) {
             f.isArray(b) || (b in d ? b = [b] : (b = f.camelCase(b), b in d ? b = [b] : b = b.split(" ")));
 
-            for (e = 0, g = b.length; e < g; e++) {
-              delete d[b[e]];
-            }
+            for (e = 0, g = b.length; e < g; e++) delete d[b[e]];
 
             if (!(c ? m : f.isEmptyObject)(d)) return;
           }
@@ -1277,10 +1197,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         f.support.deleteExpando || !j.setInterval ? delete j[k] : j[k] = null, i && (f.support.deleteExpando ? delete a[h] : a.removeAttribute ? a.removeAttribute(h) : a[h] = null);
       }
     },
-    _data: function _data(a, b, c) {
+    _data: function (a, b, c) {
       return f.data(a, b, c, !0);
     },
-    acceptData: function acceptData(a) {
+    acceptData: function (a) {
       if (a.nodeName) {
         var b = f.noData[a.nodeName.toLowerCase()];
         if (b) return b !== !0 && a.getAttribute("classid") === b;
@@ -1289,7 +1209,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       return !0;
     }
   }), f.fn.extend({
-    data: function data(a, c) {
+    data: function (a, c) {
       var d,
           e,
           g,
@@ -1306,9 +1226,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           if (j.nodeType === 1 && !f._data(j, "parsedAttrs")) {
             g = j.attributes;
 
-            for (i = g.length; k < i; k++) {
-              h = g[k].name, h.indexOf("data-") === 0 && (h = f.camelCase(h.substring(5)), l(j, h, m[h]));
-            }
+            for (i = g.length; k < i; k++) h = g[k].name, h.indexOf("data-") === 0 && (h = f.camelCase(h.substring(5)), l(j, h, m[h]));
 
             f._data(j, "parsedAttrs", !0);
           }
@@ -1317,7 +1235,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         return m;
       }
 
-      if (_typeof(a) == "object") return this.each(function () {
+      if (typeof a == "object") return this.each(function () {
         f.data(this, a);
       });
       d = a.split(".", 2), d[1] = d[1] ? "." + d[1] : "", e = d[1] + "!";
@@ -1333,16 +1251,16 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         });
       }, null, c, arguments.length > 1, null, !1);
     },
-    removeData: function removeData(a) {
+    removeData: function (a) {
       return this.each(function () {
         f.removeData(this, a);
       });
     }
   }), f.extend({
-    _mark: function _mark(a, b) {
+    _mark: function (a, b) {
       a && (b = (b || "fx") + "mark", f._data(a, b, (f._data(a, b) || 0) + 1));
     },
-    _unmark: function _unmark(a, b, c) {
+    _unmark: function (a, b, c) {
       a !== !0 && (c = b, b = a, a = !1);
 
       if (b) {
@@ -1352,7 +1270,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         e ? f._data(b, d, e) : (f.removeData(b, d, !0), n(b, c, "mark"));
       }
     },
-    queue: function queue(a, b, c) {
+    queue: function (a, b, c) {
       var d;
 
       if (a) {
@@ -1360,7 +1278,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         return d || [];
       }
     },
-    dequeue: function dequeue(a, b) {
+    dequeue: function (a, b) {
       b = b || "fx";
       var c = f.queue(a, b),
           d = c.shift(),
@@ -1370,7 +1288,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }, e)), c.length || (f.removeData(a, b + "queue " + b + ".run", !0), n(a, b, "queue"));
     }
   }), f.fn.extend({
-    queue: function queue(a, c) {
+    queue: function (a, c) {
       var d = 2;
       typeof a != "string" && (c = a, a = "fx", d--);
       if (arguments.length < d) return f.queue(this[0], a);
@@ -1379,12 +1297,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         a === "fx" && b[0] !== "inprogress" && f.dequeue(this, a);
       });
     },
-    dequeue: function dequeue(a) {
+    dequeue: function (a) {
       return this.each(function () {
         f.dequeue(this, a);
       });
     },
-    delay: function delay(a, b) {
+    delay: function (a, b) {
       a = f.fx ? f.fx.speeds[a] || a : a, b = b || "fx";
       return this.queue(b, function (b, c) {
         var d = setTimeout(b, a);
@@ -1394,10 +1312,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         };
       });
     },
-    clearQueue: function clearQueue(a) {
+    clearQueue: function (a) {
       return this.queue(a || "fx", []);
     },
-    promise: function promise(a, c) {
+    promise: function (a, c) {
       function m() {
         --h || d.resolveWith(e, [e]);
       }
@@ -1412,9 +1330,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           k = a + "mark",
           l;
 
-      while (g--) {
-        if (l = f.data(e[g], i, b, !0) || (f.data(e[g], j, b, !0) || f.data(e[g], k, b, !0)) && f.data(e[g], i, f.Callbacks("once memory"), !0)) h++, l.add(m);
-      }
+      while (g--) if (l = f.data(e[g], i, b, !0) || (f.data(e[g], j, b, !0) || f.data(e[g], k, b, !0)) && f.data(e[g], i, f.Callbacks("once memory"), !0)) h++, l.add(m);
 
       m();
       return d.promise(c);
@@ -1432,18 +1348,18 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       x,
       y;
   f.fn.extend({
-    attr: function attr(a, b) {
+    attr: function (a, b) {
       return f.access(this, f.attr, a, b, arguments.length > 1);
     },
-    removeAttr: function removeAttr(a) {
+    removeAttr: function (a) {
       return this.each(function () {
         f.removeAttr(this, a);
       });
     },
-    prop: function prop(a, b) {
+    prop: function (a, b) {
       return f.access(this, f.prop, a, b, arguments.length > 1);
     },
-    removeProp: function removeProp(a) {
+    removeProp: function (a) {
       a = f.propFix[a] || a;
       return this.each(function () {
         try {
@@ -1451,7 +1367,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         } catch (c) {}
       });
     },
-    addClass: function addClass(a) {
+    addClass: function (a) {
       var b, c, d, e, g, h, i;
       if (f.isFunction(a)) return this.each(function (b) {
         f(this).addClass(a.call(this, b, this.className));
@@ -1465,9 +1381,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           if (e.nodeType === 1) if (!e.className && b.length === 1) e.className = a;else {
             g = " " + e.className + " ";
 
-            for (h = 0, i = b.length; h < i; h++) {
-              ~g.indexOf(" " + b[h] + " ") || (g += b[h] + " ");
-            }
+            for (h = 0, i = b.length; h < i; h++) ~g.indexOf(" " + b[h] + " ") || (g += b[h] + " ");
 
             e.className = f.trim(g);
           }
@@ -1476,7 +1390,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
       return this;
     },
-    removeClass: function removeClass(a) {
+    removeClass: function (a) {
       var c, d, e, g, h, i, j;
       if (f.isFunction(a)) return this.each(function (b) {
         f(this).removeClass(a.call(this, b, this.className));
@@ -1490,9 +1404,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           if (g.nodeType === 1 && g.className) if (a) {
             h = (" " + g.className + " ").replace(o, " ");
 
-            for (i = 0, j = c.length; i < j; i++) {
-              h = h.replace(" " + c[i] + " ", " ");
-            }
+            for (i = 0, j = c.length; i < j; i++) h = h.replace(" " + c[i] + " ", " ");
 
             g.className = f.trim(h);
           } else g.className = "";
@@ -1501,10 +1413,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
       return this;
     },
-    toggleClass: function toggleClass(a, b) {
-      var c = _typeof(a),
+    toggleClass: function (a, b) {
+      var c = typeof a,
           d = typeof b == "boolean";
-
       if (f.isFunction(a)) return this.each(function (c) {
         f(this).toggleClass(a.call(this, c, this.className, b), b);
       });
@@ -1516,24 +1427,20 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
               i = b,
               j = a.split(p);
 
-          while (e = j[g++]) {
-            i = d ? i : !h.hasClass(e), h[i ? "addClass" : "removeClass"](e);
-          }
+          while (e = j[g++]) i = d ? i : !h.hasClass(e), h[i ? "addClass" : "removeClass"](e);
         } else if (c === "undefined" || c === "boolean") this.className && f._data(this, "__className__", this.className), this.className = this.className || a === !1 ? "" : f._data(this, "__className__") || "";
       });
     },
-    hasClass: function hasClass(a) {
+    hasClass: function (a) {
       var b = " " + a + " ",
           c = 0,
           d = this.length;
 
-      for (; c < d; c++) {
-        if (this[c].nodeType === 1 && (" " + this[c].className + " ").replace(o, " ").indexOf(b) > -1) return !0;
-      }
+      for (; c < d; c++) if (this[c].nodeType === 1 && (" " + this[c].className + " ").replace(o, " ").indexOf(b) > -1) return !0;
 
       return !1;
     },
-    val: function val(a) {
+    val: function (a) {
       var c,
           d,
           e,
@@ -1565,13 +1472,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   }), f.extend({
     valHooks: {
       option: {
-        get: function get(a) {
+        get: function (a) {
           var b = a.attributes.value;
           return !b || b.specified ? a.value : a.text;
         }
       },
       select: {
-        get: function get(a) {
+        get: function (a) {
           var b,
               c,
               d,
@@ -1596,7 +1503,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           if (j && !h.length && i.length) return f(i[g]).val();
           return h;
         },
-        set: function set(a, b) {
+        set: function (a, b) {
           var c = f.makeArray(b);
           f(a).find("option").each(function () {
             this.selected = f.inArray(f(this).val(), c) >= 0;
@@ -1615,7 +1522,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       height: !0,
       offset: !0
     },
-    attr: function attr(a, c, d, e) {
+    attr: function (a, c, d, e) {
       var g,
           h,
           i,
@@ -1642,7 +1549,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         return g === null ? b : g;
       }
     },
-    removeAttr: function removeAttr(a, b) {
+    removeAttr: function (a, b) {
       var c,
           d,
           e,
@@ -1653,14 +1560,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       if (b && a.nodeType === 1) {
         d = b.toLowerCase().split(p), g = d.length;
 
-        for (; i < g; i++) {
-          e = d[i], e && (c = f.propFix[e] || e, h = u.test(e), h || f.attr(a, e, ""), a.removeAttribute(v ? e : c), h && c in a && (a[c] = !1));
-        }
+        for (; i < g; i++) e = d[i], e && (c = f.propFix[e] || e, h = u.test(e), h || f.attr(a, e, ""), a.removeAttribute(v ? e : c), h && c in a && (a[c] = !1));
       }
     },
     attrHooks: {
       type: {
-        set: function set(a, b) {
+        set: function (a, b) {
           if (r.test(a.nodeName) && a.parentNode) f.error("type property can't be changed");else if (!f.support.radioValue && b === "radio" && f.nodeName(a, "input")) {
             var c = a.value;
             a.setAttribute("type", b), c && (a.value = c);
@@ -1669,11 +1574,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }
       },
       value: {
-        get: function get(a, b) {
+        get: function (a, b) {
           if (w && f.nodeName(a, "button")) return w.get(a, b);
           return b in a ? a.value : null;
         },
-        set: function set(a, b, c) {
+        set: function (a, b, c) {
           if (w && f.nodeName(a, "button")) return w.set(a, b, c);
           a.value = b;
         }
@@ -1693,7 +1598,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       frameborder: "frameBorder",
       contenteditable: "contentEditable"
     },
-    prop: function prop(a, c, d) {
+    prop: function (a, c, d) {
       var e,
           g,
           h,
@@ -1706,19 +1611,19 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     },
     propHooks: {
       tabIndex: {
-        get: function get(a) {
+        get: function (a) {
           var c = a.getAttributeNode("tabindex");
           return c && c.specified ? parseInt(c.value, 10) : s.test(a.nodeName) || t.test(a.nodeName) && a.href ? 0 : b;
         }
       }
     }
   }), f.attrHooks.tabindex = f.propHooks.tabIndex, x = {
-    get: function get(a, c) {
+    get: function (a, c) {
       var d,
           e = f.prop(a, c);
       return e === !0 || typeof e != "boolean" && (d = a.getAttributeNode(c)) && d.nodeValue !== !1 ? c.toLowerCase() : b;
     },
-    set: function set(a, b, c) {
+    set: function (a, b, c) {
       var d;
       b === !1 ? f.removeAttr(a, c) : (d = f.propFix[c] || c, d in a && (a[d] = !0), a.setAttribute(c, c.toLowerCase()));
       return c;
@@ -1728,19 +1633,19 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     id: !0,
     coords: !0
   }, w = f.valHooks.button = {
-    get: function get(a, c) {
+    get: function (a, c) {
       var d;
       d = a.getAttributeNode(c);
       return d && (y[c] ? d.nodeValue !== "" : d.specified) ? d.nodeValue : b;
     },
-    set: function set(a, b, d) {
+    set: function (a, b, d) {
       var e = a.getAttributeNode(d);
       e || (e = c.createAttribute(d), a.setAttributeNode(e));
       return e.nodeValue = b + "";
     }
   }, f.attrHooks.tabindex.set = w.set, f.each(["width", "height"], function (a, b) {
     f.attrHooks[b] = f.extend(f.attrHooks[b], {
-      set: function set(a, c) {
+      set: function (a, c) {
         if (c === "") {
           a.setAttribute(b, "auto");
           return c;
@@ -1749,38 +1654,38 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     });
   }), f.attrHooks.contenteditable = {
     get: w.get,
-    set: function set(a, b, c) {
+    set: function (a, b, c) {
       b === "" && (b = "false"), w.set(a, b, c);
     }
   }), f.support.hrefNormalized || f.each(["href", "src", "width", "height"], function (a, c) {
     f.attrHooks[c] = f.extend(f.attrHooks[c], {
-      get: function get(a) {
+      get: function (a) {
         var d = a.getAttribute(c, 2);
         return d === null ? b : d;
       }
     });
   }), f.support.style || (f.attrHooks.style = {
-    get: function get(a) {
+    get: function (a) {
       return a.style.cssText.toLowerCase() || b;
     },
-    set: function set(a, b) {
+    set: function (a, b) {
       return a.style.cssText = "" + b;
     }
   }), f.support.optSelected || (f.propHooks.selected = f.extend(f.propHooks.selected, {
-    get: function get(a) {
+    get: function (a) {
       var b = a.parentNode;
       b && (b.selectedIndex, b.parentNode && b.parentNode.selectedIndex);
       return null;
     }
   })), f.support.enctype || (f.propFix.enctype = "encoding"), f.support.checkOn || f.each(["radio", "checkbox"], function () {
     f.valHooks[this] = {
-      get: function get(a) {
+      get: function (a) {
         return a.getAttribute("value") === null ? "on" : a.value;
       }
     };
   }), f.each(["radio", "checkbox"], function () {
     f.valHooks[this] = f.extend(f.valHooks[this], {
-      set: function set(a, b) {
+      set: function (a, b) {
         if (f.isArray(b)) return a.checked = f.inArray(f(a).val(), b) >= 0;
       }
     });
@@ -1793,27 +1698,27 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       D = /^(?:mouse|contextmenu)|click/,
       E = /^(?:focusinfocus|focusoutblur)$/,
       F = /^(\w*)(?:#([\w\-]+))?(?:\.([\w\-]+))?$/,
-      G = function G(a) {
+      G = function (a) {
     var b = F.exec(a);
     b && (b[1] = (b[1] || "").toLowerCase(), b[3] = b[3] && new RegExp("(?:^|\\s)" + b[3] + "(?:\\s|$)"));
     return b;
   },
-      H = function H(a, b) {
+      H = function (a, b) {
     var c = a.attributes || {};
     return (!b[1] || a.nodeName.toLowerCase() === b[1]) && (!b[2] || (c.id || {}).value === b[2]) && (!b[3] || b[3].test((c["class"] || {}).value));
   },
-      I = function I(a) {
+      I = function (a) {
     return f.event.special.hover ? a : a.replace(B, "mouseenter$1 mouseleave$1");
   };
 
   f.event = {
-    add: function add(a, c, d, e, g) {
-      var h, _i, j, k, l, m, n, o, p, q, r, s;
+    add: function (a, c, d, e, g) {
+      var h, i, j, k, l, m, n, o, p, q, r, s;
 
       if (!(a.nodeType === 3 || a.nodeType === 8 || !c || !d || !(h = f._data(a)))) {
-        d.handler && (p = d, d = p.handler, g = p.selector), d.guid || (d.guid = f.guid++), j = h.events, j || (h.events = j = {}), _i = h.handle, _i || (h.handle = _i = function i(a) {
-          return typeof f != "undefined" && (!a || f.event.triggered !== a.type) ? f.event.dispatch.apply(_i.elem, arguments) : b;
-        }, _i.elem = a), c = f.trim(I(c)).split(" ");
+        d.handler && (p = d, d = p.handler, g = p.selector), d.guid || (d.guid = f.guid++), j = h.events, j || (h.events = j = {}), i = h.handle, i || (h.handle = i = function (a) {
+          return typeof f != "undefined" && (!a || f.event.triggered !== a.type) ? f.event.dispatch.apply(i.elem, arguments) : b;
+        }, i.elem = a), c = f.trim(I(c)).split(" ");
 
         for (k = 0; k < c.length; k++) {
           l = A.exec(c[k]) || [], m = l[1], n = (l[2] || "").split(".").sort(), s = f.event.special[m] || {}, m = (g ? s.delegateType : s.bindType) || m, s = f.event.special[m] || {}, o = f.extend({
@@ -1829,7 +1734,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
           if (!r) {
             r = j[m] = [], r.delegateCount = 0;
-            if (!s.setup || s.setup.call(a, e, n, _i) === !1) a.addEventListener ? a.addEventListener(m, _i, !1) : a.attachEvent && a.attachEvent("on" + m, _i);
+            if (!s.setup || s.setup.call(a, e, n, i) === !1) a.addEventListener ? a.addEventListener(m, i, !1) : a.attachEvent && a.attachEvent("on" + m, i);
           }
 
           s.add && (s.add.call(a, o), o.handler.guid || (o.handler.guid = d.guid)), g ? r.splice(r.delegateCount++, 0, o) : r.push(o), f.event.global[m] = !0;
@@ -1839,7 +1744,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
     },
     global: {},
-    remove: function remove(a, b, c, d, e) {
+    remove: function (a, b, c, d, e) {
       var g = f.hasData(a) && f._data(a),
           h,
           i,
@@ -1861,18 +1766,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           i = A.exec(b[h]) || [], j = k = i[1], l = i[2];
 
           if (!j) {
-            for (j in o) {
-              f.event.remove(a, j + b[h], c, d, !0);
-            }
+            for (j in o) f.event.remove(a, j + b[h], c, d, !0);
 
             continue;
           }
 
           p = f.event.special[j] || {}, j = (d ? p.delegateType : p.bindType) || j, r = o[j] || [], m = r.length, l = l ? new RegExp("(^|\\.)" + l.split(".").sort().join("\\.(?:.*\\.)?") + "(\\.|$)") : null;
 
-          for (n = 0; n < r.length; n++) {
-            s = r[n], (e || k === s.origType) && (!c || c.guid === s.guid) && (!l || l.test(s.namespace)) && (!d || d === s.selector || d === "**" && s.selector) && (r.splice(n--, 1), s.selector && r.delegateCount--, p.remove && p.remove.call(a, s));
-          }
+          for (n = 0; n < r.length; n++) s = r[n], (e || k === s.origType) && (!c || c.guid === s.guid) && (!l || l.test(s.namespace)) && (!d || d === s.selector || d === "**" && s.selector) && (r.splice(n--, 1), s.selector && r.delegateCount--, p.remove && p.remove.call(a, s));
 
           r.length === 0 && m !== r.length && ((!p.teardown || p.teardown.call(a, l) === !1) && f.removeEvent(a, j, g.handle), delete o[j]);
         }
@@ -1885,7 +1786,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       setData: !0,
       changeData: !0
     },
-    trigger: function trigger(c, d, e, g) {
+    trigger: function (c, d, e, g) {
       if (!e || e.nodeType !== 3 && e.nodeType !== 8) {
         var h = c.type || c,
             i = [],
@@ -1902,14 +1803,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         if (E.test(h + f.event.triggered)) return;
         h.indexOf("!") >= 0 && (h = h.slice(0, -1), k = !0), h.indexOf(".") >= 0 && (i = h.split("."), h = i.shift(), i.sort());
         if ((!e || f.event.customEvent[h]) && !f.event.global[h]) return;
-        c = _typeof(c) == "object" ? c[f.expando] ? c : new f.Event(h, c) : new f.Event(h), c.type = h, c.isTrigger = !0, c.exclusive = k, c.namespace = i.join("."), c.namespace_re = c.namespace ? new RegExp("(^|\\.)" + i.join("\\.(?:.*\\.)?") + "(\\.|$)") : null, o = h.indexOf(":") < 0 ? "on" + h : "";
+        c = typeof c == "object" ? c[f.expando] ? c : new f.Event(h, c) : new f.Event(h), c.type = h, c.isTrigger = !0, c.exclusive = k, c.namespace = i.join("."), c.namespace_re = c.namespace ? new RegExp("(^|\\.)" + i.join("\\.(?:.*\\.)?") + "(\\.|$)") : null, o = h.indexOf(":") < 0 ? "on" + h : "";
 
         if (!e) {
           j = f.cache;
 
-          for (l in j) {
-            j[l].events && j[l].events[h] && f.event.trigger(c, d, j[l].handle.elem, !0);
-          }
+          for (l in j) j[l].events && j[l].events[h] && f.event.trigger(c, d, j[l].handle.elem, !0);
 
           return;
         }
@@ -1921,22 +1820,18 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         if (!g && !p.noBubble && !f.isWindow(e)) {
           s = p.delegateType || h, m = E.test(s + h) ? e : e.parentNode, n = null;
 
-          for (; m; m = m.parentNode) {
-            r.push([m, s]), n = m;
-          }
+          for (; m; m = m.parentNode) r.push([m, s]), n = m;
 
           n && n === e.ownerDocument && r.push([n.defaultView || n.parentWindow || a, s]);
         }
 
-        for (l = 0; l < r.length && !c.isPropagationStopped(); l++) {
-          m = r[l][0], c.type = r[l][1], q = (f._data(m, "events") || {})[c.type] && f._data(m, "handle"), q && q.apply(m, d), q = o && m[o], q && f.acceptData(m) && q.apply(m, d) === !1 && c.preventDefault();
-        }
+        for (l = 0; l < r.length && !c.isPropagationStopped(); l++) m = r[l][0], c.type = r[l][1], q = (f._data(m, "events") || {})[c.type] && f._data(m, "handle"), q && q.apply(m, d), q = o && m[o], q && f.acceptData(m) && q.apply(m, d) === !1 && c.preventDefault();
 
         c.type = h, !g && !c.isDefaultPrevented() && (!p._default || p._default.apply(e.ownerDocument, d) === !1) && (h !== "click" || !f.nodeName(e, "a")) && f.acceptData(e) && o && e[h] && (h !== "focus" && h !== "blur" || c.target.offsetWidth !== 0) && !f.isWindow(e) && (n = e[o], n && (e[o] = null), f.event.triggered = h, e[h](), f.event.triggered = b, n && (e[o] = n));
         return c.result;
       }
     },
-    dispatch: function dispatch(c) {
+    dispatch: function (c) {
       c = f.event.fix(c || a.event);
       var d = (f._data(this, "events") || {})[c.type] || [],
           e = d.delegateCount,
@@ -1961,19 +1856,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         if (e && (!c.button || c.type !== "click")) {
           n = f(this), n.context = this.ownerDocument || this;
 
-          for (m = c.target; m != this; m = m.parentNode || this) {
-            if (m.disabled !== !0) {
-              p = {}, r = [], n[0] = m;
+          for (m = c.target; m != this; m = m.parentNode || this) if (m.disabled !== !0) {
+            p = {}, r = [], n[0] = m;
 
-              for (k = 0; k < e; k++) {
-                s = d[k], t = s.selector, p[t] === b && (p[t] = s.quick ? H(m, s.quick) : n.is(t)), p[t] && r.push(s);
-              }
+            for (k = 0; k < e; k++) s = d[k], t = s.selector, p[t] === b && (p[t] = s.quick ? H(m, s.quick) : n.is(t)), p[t] && r.push(s);
 
-              r.length && j.push({
-                elem: m,
-                matches: r
-              });
-            }
+            r.length && j.push({
+              elem: m,
+              matches: r
+            });
           }
         }
 
@@ -1999,14 +1890,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     fixHooks: {},
     keyHooks: {
       props: "char charCode key keyCode".split(" "),
-      filter: function filter(a, b) {
+      filter: function (a, b) {
         a.which == null && (a.which = b.charCode != null ? b.charCode : b.keyCode);
         return a;
       }
     },
     mouseHooks: {
       props: "button buttons clientX clientY fromElement offsetX offsetY pageX pageY screenX screenY toElement".split(" "),
-      filter: function filter(a, d) {
+      filter: function (a, d) {
         var e,
             f,
             g,
@@ -2016,7 +1907,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         return a;
       }
     },
-    fix: function fix(a) {
+    fix: function (a) {
       if (a[f.expando]) return a;
       var d,
           e,
@@ -2025,9 +1916,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           i = h.props ? this.props.concat(h.props) : this.props;
       a = f.Event(g);
 
-      for (d = i.length; d;) {
-        e = i[--d], a[e] = g[e];
-      }
+      for (d = i.length; d;) e = i[--d], a[e] = g[e];
 
       a.target || (a.target = g.srcElement || c), a.target.nodeType === 3 && (a.target = a.target.parentNode), a.metaKey === b && (a.metaKey = a.ctrlKey);
       return h.filter ? h.filter(a, g) : a;
@@ -2046,15 +1935,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         delegateType: "focusout"
       },
       beforeunload: {
-        setup: function setup(a, b, c) {
+        setup: function (a, b, c) {
           f.isWindow(this) && (this.onbeforeunload = c);
         },
-        teardown: function teardown(a, b) {
+        teardown: function (a, b) {
           this.onbeforeunload === b && (this.onbeforeunload = null);
         }
       }
     },
-    simulate: function simulate(a, b, c, d) {
+    simulate: function (a, b, c, d) {
       var e = f.extend(new f.Event(), c, {
         type: a,
         isSimulated: !0,
@@ -2070,17 +1959,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     if (!(this instanceof f.Event)) return new f.Event(a, b);
     a && a.type ? (this.originalEvent = a, this.type = a.type, this.isDefaultPrevented = a.defaultPrevented || a.returnValue === !1 || a.getPreventDefault && a.getPreventDefault() ? K : J) : this.type = a, b && f.extend(this, b), this.timeStamp = a && a.timeStamp || f.now(), this[f.expando] = !0;
   }, f.Event.prototype = {
-    preventDefault: function preventDefault() {
+    preventDefault: function () {
       this.isDefaultPrevented = K;
       var a = this.originalEvent;
       !a || (a.preventDefault ? a.preventDefault() : a.returnValue = !1);
     },
-    stopPropagation: function stopPropagation() {
+    stopPropagation: function () {
       this.isPropagationStopped = K;
       var a = this.originalEvent;
       !a || (a.stopPropagation && a.stopPropagation(), a.cancelBubble = !0);
     },
-    stopImmediatePropagation: function stopImmediatePropagation() {
+    stopImmediatePropagation: function () {
       this.isImmediatePropagationStopped = K, this.stopPropagation();
     },
     isDefaultPrevented: J,
@@ -2093,7 +1982,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     f.event.special[a] = {
       delegateType: b,
       bindType: b,
-      handle: function handle(a) {
+      handle: function (a) {
         var c = this,
             d = a.relatedTarget,
             e = a.handleObj,
@@ -2104,7 +1993,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
     };
   }), f.support.submitBubbles || (f.event.special.submit = {
-    setup: function setup() {
+    setup: function () {
       if (f.nodeName(this, "form")) return !1;
       f.event.add(this, "click._submit keypress._submit", function (a) {
         var c = a.target,
@@ -2114,15 +2003,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }), d._submit_attached = !0);
       });
     },
-    postDispatch: function postDispatch(a) {
+    postDispatch: function (a) {
       a._submit_bubble && (delete a._submit_bubble, this.parentNode && !a.isTrigger && f.event.simulate("submit", this.parentNode, a, !0));
     },
-    teardown: function teardown() {
+    teardown: function () {
       if (f.nodeName(this, "form")) return !1;
       f.event.remove(this, "._submit");
     }
   }), f.support.changeBubbles || (f.event.special.change = {
-    setup: function setup() {
+    setup: function () {
       if (z.test(this.nodeName)) {
         if (this.type === "checkbox" || this.type === "radio") f.event.add(this, "propertychange._change", function (a) {
           a.originalEvent.propertyName === "checked" && (this._just_changed = !0);
@@ -2139,11 +2028,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }), b._change_attached = !0);
       });
     },
-    handle: function handle(a) {
+    handle: function (a) {
       var b = a.target;
       if (this !== b || a.isSimulated || a.isTrigger || b.type !== "radio" && b.type !== "checkbox") return a.handleObj.handler.apply(this, arguments);
     },
-    teardown: function teardown() {
+    teardown: function () {
       f.event.remove(this, "._change");
       return z.test(this.nodeName);
     }
@@ -2152,35 +2041,33 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     blur: "focusout"
   }, function (a, b) {
     var d = 0,
-        e = function e(a) {
+        e = function (a) {
       f.event.simulate(b, a.target, f.event.fix(a), !0);
     };
 
     f.event.special[b] = {
-      setup: function setup() {
+      setup: function () {
         d++ === 0 && c.addEventListener(a, e, !0);
       },
-      teardown: function teardown() {
+      teardown: function () {
         --d === 0 && c.removeEventListener(a, e, !0);
       }
     };
   }), f.fn.extend({
-    on: function on(a, c, d, e, g) {
+    on: function (a, c, d, e, g) {
       var h, i;
 
-      if (_typeof(a) == "object") {
+      if (typeof a == "object") {
         typeof c != "string" && (d = d || c, c = b);
 
-        for (i in a) {
-          this.on(i, c, d, a[i], g);
-        }
+        for (i in a) this.on(i, c, d, a[i], g);
 
         return this;
       }
 
       d == null && e == null ? (e = c, d = c = b) : e == null && (typeof c == "string" ? (e = d, d = b) : (e = d, d = c, c = b));
       if (e === !1) e = J;else if (!e) return this;
-      g === 1 && (h = e, e = function e(a) {
+      g === 1 && (h = e, e = function (a) {
         f().off(a);
         return h.apply(this, arguments);
       }, e.guid = h.guid || (h.guid = f.guid++));
@@ -2188,20 +2075,18 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         f.event.add(this, a, e, d, c);
       });
     },
-    one: function one(a, b, c, d) {
+    one: function (a, b, c, d) {
       return this.on(a, b, c, d, 1);
     },
-    off: function off(a, c, d) {
+    off: function (a, c, d) {
       if (a && a.preventDefault && a.handleObj) {
         var e = a.handleObj;
         f(a.delegateTarget).off(e.namespace ? e.origType + "." + e.namespace : e.origType, e.selector, e.handler);
         return this;
       }
 
-      if (_typeof(a) == "object") {
-        for (var g in a) {
-          this.off(g, c, a[g]);
-        }
+      if (typeof a == "object") {
+        for (var g in a) this.off(g, c, a[g]);
 
         return this;
       }
@@ -2212,39 +2097,39 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         f.event.remove(this, a, d, c);
       });
     },
-    bind: function bind(a, b, c) {
+    bind: function (a, b, c) {
       return this.on(a, null, b, c);
     },
-    unbind: function unbind(a, b) {
+    unbind: function (a, b) {
       return this.off(a, null, b);
     },
-    live: function live(a, b, c) {
+    live: function (a, b, c) {
       f(this.context).on(a, this.selector, b, c);
       return this;
     },
-    die: function die(a, b) {
+    die: function (a, b) {
       f(this.context).off(a, this.selector || "**", b);
       return this;
     },
-    delegate: function delegate(a, b, c, d) {
+    delegate: function (a, b, c, d) {
       return this.on(b, a, c, d);
     },
-    undelegate: function undelegate(a, b, c) {
+    undelegate: function (a, b, c) {
       return arguments.length == 1 ? this.off(a, "**") : this.off(b, a, c);
     },
-    trigger: function trigger(a, b) {
+    trigger: function (a, b) {
       return this.each(function () {
         f.event.trigger(a, b, this);
       });
     },
-    triggerHandler: function triggerHandler(a, b) {
+    triggerHandler: function (a, b) {
       if (this[0]) return f.event.trigger(a, b, this[0], !0);
     },
-    toggle: function toggle(a) {
+    toggle: function (a) {
       var b = arguments,
           c = a.guid || f.guid++,
           d = 0,
-          e = function e(c) {
+          e = function (c) {
         var e = (f._data(this, "lastToggle" + a.guid) || 0) % d;
         f._data(this, "lastToggle" + a.guid, e + 1), c.preventDefault();
         return b[e].apply(this, arguments) || !1;
@@ -2252,13 +2137,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
       e.guid = c;
 
-      while (d < b.length) {
-        b[d++].guid = c;
-      }
+      while (d < b.length) b[d++].guid = c;
 
       return this.click(e);
     },
-    hover: function hover(a, b) {
+    hover: function (a, b) {
       return this.mouseenter(a).mouseleave(b || a);
     }
   }), f.each("blur focus focusin focusout load resize scroll unload click dblclick mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave change select submit keydown keypress keyup error contextmenu".split(" "), function (a, b) {
@@ -2289,7 +2172,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
                   k = !0;
                   break;
                 }
-              } else if (_m2.filter(b, [j]).length > 0) {
+              } else if (m.filter(b, [j]).length > 0) {
                 k = j;
                 break;
               }
@@ -2346,12 +2229,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       return 0;
     });
 
-    var _m2 = function m(b, d, e, f) {
+    var m = function (b, d, e, f) {
       e = e || [], d = d || c;
       var h = d;
       if (d.nodeType !== 1 && d.nodeType !== 9) return [];
       if (!b || typeof b != "string") return e;
-
       var i,
           j,
           k,
@@ -2361,7 +2243,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           r,
           t,
           u = !0,
-          v = _m2.isXML(d),
+          v = m.isXML(d),
           w = [],
           x = b;
 
@@ -2380,52 +2262,42 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
       if (w.length > 1 && p.exec(b)) {
         if (w.length === 2 && o.relative[w[0]]) j = y(w[0] + w[1], d, f);else {
-          j = o.relative[w[0]] ? [d] : _m2(w.shift(), d);
+          j = o.relative[w[0]] ? [d] : m(w.shift(), d);
 
-          while (w.length) {
-            b = w.shift(), o.relative[b] && (b += w.shift()), j = y(b, j, f);
-          }
+          while (w.length) b = w.shift(), o.relative[b] && (b += w.shift()), j = y(b, j, f);
         }
       } else {
-        !f && w.length > 1 && d.nodeType === 9 && !v && o.match.ID.test(w[0]) && !o.match.ID.test(w[w.length - 1]) && (n = _m2.find(w.shift(), d, v), d = n.expr ? _m2.filter(n.expr, n.set)[0] : n.set[0]);
+        !f && w.length > 1 && d.nodeType === 9 && !v && o.match.ID.test(w[0]) && !o.match.ID.test(w[w.length - 1]) && (n = m.find(w.shift(), d, v), d = n.expr ? m.filter(n.expr, n.set)[0] : n.set[0]);
 
         if (d) {
           n = f ? {
             expr: w.pop(),
             set: s(f)
-          } : _m2.find(w.pop(), w.length === 1 && (w[0] === "~" || w[0] === "+") && d.parentNode ? d.parentNode : d, v), j = n.expr ? _m2.filter(n.expr, n.set) : n.set, w.length > 0 ? k = s(j) : u = !1;
+          } : m.find(w.pop(), w.length === 1 && (w[0] === "~" || w[0] === "+") && d.parentNode ? d.parentNode : d, v), j = n.expr ? m.filter(n.expr, n.set) : n.set, w.length > 0 ? k = s(j) : u = !1;
 
-          while (w.length) {
-            q = w.pop(), r = q, o.relative[q] ? r = w.pop() : q = "", r == null && (r = d), o.relative[q](k, r, v);
-          }
+          while (w.length) q = w.pop(), r = q, o.relative[q] ? r = w.pop() : q = "", r == null && (r = d), o.relative[q](k, r, v);
         } else k = w = [];
       }
-      k || (k = j), k || _m2.error(q || b);
+      k || (k = j), k || m.error(q || b);
       if (g.call(k) === "[object Array]") {
-        if (!u) e.push.apply(e, k);else if (d && d.nodeType === 1) for (t = 0; k[t] != null; t++) {
-          k[t] && (k[t] === !0 || k[t].nodeType === 1 && _m2.contains(d, k[t])) && e.push(j[t]);
-        } else for (t = 0; k[t] != null; t++) {
-          k[t] && k[t].nodeType === 1 && e.push(j[t]);
-        }
+        if (!u) e.push.apply(e, k);else if (d && d.nodeType === 1) for (t = 0; k[t] != null; t++) k[t] && (k[t] === !0 || k[t].nodeType === 1 && m.contains(d, k[t])) && e.push(j[t]);else for (t = 0; k[t] != null; t++) k[t] && k[t].nodeType === 1 && e.push(j[t]);
       } else s(k, e);
-      l && (_m2(l, h, e, f), _m2.uniqueSort(e));
+      l && (m(l, h, e, f), m.uniqueSort(e));
       return e;
     };
 
-    _m2.uniqueSort = function (a) {
+    m.uniqueSort = function (a) {
       if (u) {
         h = i, a.sort(u);
-        if (h) for (var b = 1; b < a.length; b++) {
-          a[b] === a[b - 1] && a.splice(b--, 1);
-        }
+        if (h) for (var b = 1; b < a.length; b++) a[b] === a[b - 1] && a.splice(b--, 1);
       }
 
       return a;
-    }, _m2.matches = function (a, b) {
-      return _m2(a, null, null, b);
-    }, _m2.matchesSelector = function (a, b) {
-      return _m2(b, null, null, [a]).length > 0;
-    }, _m2.find = function (a, b, c) {
+    }, m.matches = function (a, b) {
+      return m(a, null, null, b);
+    }, m.matchesSelector = function (a, b) {
+      return m(b, null, null, [a]).length > 0;
+    }, m.find = function (a, b, c) {
       var d, e, f, g, h, i;
       if (!a) return [];
 
@@ -2451,7 +2323,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         set: d,
         expr: a
       };
-    }, _m2.filter = function (a, c, d, e) {
+    }, m.filter = function (a, c, d, e) {
       var f,
           g,
           h,
@@ -2464,42 +2336,38 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           q = a,
           r = [],
           s = c,
-          t = c && c[0] && _m2.isXML(c[0]);
+          t = c && c[0] && m.isXML(c[0]);
 
       while (a && c.length) {
-        for (h in o.filter) {
-          if ((f = o.leftMatch[h].exec(a)) != null && f[2]) {
-            k = o.filter[h], l = f[1], g = !1, f.splice(1, 1);
-            if (l.substr(l.length - 1) === "\\") continue;
-            s === r && (r = []);
+        for (h in o.filter) if ((f = o.leftMatch[h].exec(a)) != null && f[2]) {
+          k = o.filter[h], l = f[1], g = !1, f.splice(1, 1);
+          if (l.substr(l.length - 1) === "\\") continue;
+          s === r && (r = []);
 
-            if (o.preFilter[h]) {
-              f = o.preFilter[h](f, s, d, r, e, t);
-              if (!f) g = i = !0;else if (f === !0) continue;
-            }
+          if (o.preFilter[h]) {
+            f = o.preFilter[h](f, s, d, r, e, t);
+            if (!f) g = i = !0;else if (f === !0) continue;
+          }
 
-            if (f) for (n = 0; (j = s[n]) != null; n++) {
-              j && (i = k(j, f, n, s), p = e ^ i, d && i != null ? p ? g = !0 : s[n] = !1 : p && (r.push(j), g = !0));
-            }
+          if (f) for (n = 0; (j = s[n]) != null; n++) j && (i = k(j, f, n, s), p = e ^ i, d && i != null ? p ? g = !0 : s[n] = !1 : p && (r.push(j), g = !0));
 
-            if (i !== b) {
-              d || (s = r), a = a.replace(o.match[h], "");
-              if (!g) return [];
-              break;
-            }
+          if (i !== b) {
+            d || (s = r), a = a.replace(o.match[h], "");
+            if (!g) return [];
+            break;
           }
         }
 
-        if (a === q) if (g == null) _m2.error(a);else break;
+        if (a === q) if (g == null) m.error(a);else break;
         q = a;
       }
 
       return s;
-    }, _m2.error = function (a) {
+    }, m.error = function (a) {
       throw new Error("Syntax error, unrecognized expression: " + a);
     };
 
-    var n = _m2.getText = function (a) {
+    var n = m.getText = function (a) {
       var b,
           c,
           d = a.nodeType,
@@ -2510,17 +2378,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           if (typeof a.textContent == "string") return a.textContent;
           if (typeof a.innerText == "string") return a.innerText.replace(k, "");
 
-          for (a = a.firstChild; a; a = a.nextSibling) {
-            e += n(a);
-          }
+          for (a = a.firstChild; a; a = a.nextSibling) e += n(a);
         } else if (d === 3 || d === 4) return a.nodeValue;
-      } else for (b = 0; c = a[b]; b++) {
-        c.nodeType !== 8 && (e += n(c));
-      }
+      } else for (b = 0; c = a[b]; b++) c.nodeType !== 8 && (e += n(c));
 
       return e;
     },
-        o = _m2.selectors = {
+        o = m.selectors = {
       order: ["ID", "NAME", "TAG"],
       match: {
         ID: /#((?:[\w\u00c0-\uFFFF\-]|\\.)+)/,
@@ -2538,33 +2402,29 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         "for": "htmlFor"
       },
       attrHandle: {
-        href: function href(a) {
+        href: function (a) {
           return a.getAttribute("href");
         },
-        type: function type(a) {
+        type: function (a) {
           return a.getAttribute("type");
         }
       },
       relative: {
-        "+": function _(a, b) {
+        "+": function (a, b) {
           var c = typeof b == "string",
               d = c && !l.test(b),
               e = c && !d;
           d && (b = b.toLowerCase());
 
-          for (var f = 0, g = a.length, h; f < g; f++) {
-            if (h = a[f]) {
-              while ((h = h.previousSibling) && h.nodeType !== 1) {
-                ;
-              }
+          for (var f = 0, g = a.length, h; f < g; f++) if (h = a[f]) {
+            while ((h = h.previousSibling) && h.nodeType !== 1);
 
-              a[f] = e || h && h.nodeName.toLowerCase() === b ? h || !1 : h === b;
-            }
+            a[f] = e || h && h.nodeName.toLowerCase() === b ? h || !1 : h === b;
           }
 
-          e && _m2.filter(b, a, !0);
+          e && m.filter(b, a, !0);
         },
-        ">": function _(a, b) {
+        ">": function (a, b) {
           var c,
               d = typeof b == "string",
               e = 0,
@@ -2582,20 +2442,18 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
               }
             }
           } else {
-            for (; e < f; e++) {
-              c = a[e], c && (a[e] = d ? c.parentNode : c.parentNode === b);
-            }
+            for (; e < f; e++) c = a[e], c && (a[e] = d ? c.parentNode : c.parentNode === b);
 
-            d && _m2.filter(b, a, !0);
+            d && m.filter(b, a, !0);
           }
         },
-        "": function _(a, b, c) {
+        "": function (a, b, c) {
           var d,
               f = e++,
               g = x;
           typeof b == "string" && !l.test(b) && (b = b.toLowerCase(), d = b, g = w), g("parentNode", b, f, a, d, c);
         },
-        "~": function _(a, b, c) {
+        "~": function (a, b, c) {
           var d,
               f = e++,
               g = x;
@@ -2603,169 +2461,164 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }
       },
       find: {
-        ID: function ID(a, b, c) {
+        ID: function (a, b, c) {
           if (typeof b.getElementById != "undefined" && !c) {
             var d = b.getElementById(a[1]);
             return d && d.parentNode ? [d] : [];
           }
         },
-        NAME: function NAME(a, b) {
+        NAME: function (a, b) {
           if (typeof b.getElementsByName != "undefined") {
             var c = [],
                 d = b.getElementsByName(a[1]);
 
-            for (var e = 0, f = d.length; e < f; e++) {
-              d[e].getAttribute("name") === a[1] && c.push(d[e]);
-            }
+            for (var e = 0, f = d.length; e < f; e++) d[e].getAttribute("name") === a[1] && c.push(d[e]);
 
             return c.length === 0 ? null : c;
           }
         },
-        TAG: function TAG(a, b) {
+        TAG: function (a, b) {
           if (typeof b.getElementsByTagName != "undefined") return b.getElementsByTagName(a[1]);
         }
       },
       preFilter: {
-        CLASS: function CLASS(a, b, c, d, e, f) {
+        CLASS: function (a, b, c, d, e, f) {
           a = " " + a[1].replace(j, "") + " ";
           if (f) return a;
 
-          for (var g = 0, h; (h = b[g]) != null; g++) {
-            h && (e ^ (h.className && (" " + h.className + " ").replace(/[\t\n\r]/g, " ").indexOf(a) >= 0) ? c || d.push(h) : c && (b[g] = !1));
-          }
+          for (var g = 0, h; (h = b[g]) != null; g++) h && (e ^ (h.className && (" " + h.className + " ").replace(/[\t\n\r]/g, " ").indexOf(a) >= 0) ? c || d.push(h) : c && (b[g] = !1));
 
           return !1;
         },
-        ID: function ID(a) {
+        ID: function (a) {
           return a[1].replace(j, "");
         },
-        TAG: function TAG(a, b) {
+        TAG: function (a, b) {
           return a[1].replace(j, "").toLowerCase();
         },
-        CHILD: function CHILD(a) {
+        CHILD: function (a) {
           if (a[1] === "nth") {
-            a[2] || _m2.error(a[0]), a[2] = a[2].replace(/^\+|\s*/g, "");
+            a[2] || m.error(a[0]), a[2] = a[2].replace(/^\+|\s*/g, "");
             var b = /(-?)(\d*)(?:n([+\-]?\d*))?/.exec(a[2] === "even" && "2n" || a[2] === "odd" && "2n+1" || !/\D/.test(a[2]) && "0n+" + a[2] || a[2]);
             a[2] = b[1] + (b[2] || 1) - 0, a[3] = b[3] - 0;
-          } else a[2] && _m2.error(a[0]);
+          } else a[2] && m.error(a[0]);
 
           a[0] = e++;
           return a;
         },
-        ATTR: function ATTR(a, b, c, d, e, f) {
+        ATTR: function (a, b, c, d, e, f) {
           var g = a[1] = a[1].replace(j, "");
           !f && o.attrMap[g] && (a[1] = o.attrMap[g]), a[4] = (a[4] || a[5] || "").replace(j, ""), a[2] === "~=" && (a[4] = " " + a[4] + " ");
           return a;
         },
-        PSEUDO: function PSEUDO(b, c, d, e, f) {
+        PSEUDO: function (b, c, d, e, f) {
           if (b[1] === "not") {
-            if ((a.exec(b[3]) || "").length > 1 || /^\w/.test(b[3])) b[3] = _m2(b[3], null, null, c);else {
-              var g = _m2.filter(b[3], c, d, !0 ^ f);
-
+            if ((a.exec(b[3]) || "").length > 1 || /^\w/.test(b[3])) b[3] = m(b[3], null, null, c);else {
+              var g = m.filter(b[3], c, d, !0 ^ f);
               d || e.push.apply(e, g);
               return !1;
             }
           } else if (o.match.POS.test(b[0]) || o.match.CHILD.test(b[0])) return !0;
           return b;
         },
-        POS: function POS(a) {
+        POS: function (a) {
           a.unshift(!0);
           return a;
         }
       },
       filters: {
-        enabled: function enabled(a) {
+        enabled: function (a) {
           return a.disabled === !1 && a.type !== "hidden";
         },
-        disabled: function disabled(a) {
+        disabled: function (a) {
           return a.disabled === !0;
         },
-        checked: function checked(a) {
+        checked: function (a) {
           return a.checked === !0;
         },
-        selected: function selected(a) {
+        selected: function (a) {
           a.parentNode && a.parentNode.selectedIndex;
           return a.selected === !0;
         },
-        parent: function parent(a) {
+        parent: function (a) {
           return !!a.firstChild;
         },
-        empty: function empty(a) {
+        empty: function (a) {
           return !a.firstChild;
         },
-        has: function has(a, b, c) {
-          return !!_m2(c[3], a).length;
+        has: function (a, b, c) {
+          return !!m(c[3], a).length;
         },
-        header: function header(a) {
+        header: function (a) {
           return /h\d/i.test(a.nodeName);
         },
-        text: function text(a) {
+        text: function (a) {
           var b = a.getAttribute("type"),
               c = a.type;
           return a.nodeName.toLowerCase() === "input" && "text" === c && (b === c || b === null);
         },
-        radio: function radio(a) {
+        radio: function (a) {
           return a.nodeName.toLowerCase() === "input" && "radio" === a.type;
         },
-        checkbox: function checkbox(a) {
+        checkbox: function (a) {
           return a.nodeName.toLowerCase() === "input" && "checkbox" === a.type;
         },
-        file: function file(a) {
+        file: function (a) {
           return a.nodeName.toLowerCase() === "input" && "file" === a.type;
         },
-        password: function password(a) {
+        password: function (a) {
           return a.nodeName.toLowerCase() === "input" && "password" === a.type;
         },
-        submit: function submit(a) {
+        submit: function (a) {
           var b = a.nodeName.toLowerCase();
           return (b === "input" || b === "button") && "submit" === a.type;
         },
-        image: function image(a) {
+        image: function (a) {
           return a.nodeName.toLowerCase() === "input" && "image" === a.type;
         },
-        reset: function reset(a) {
+        reset: function (a) {
           var b = a.nodeName.toLowerCase();
           return (b === "input" || b === "button") && "reset" === a.type;
         },
-        button: function button(a) {
+        button: function (a) {
           var b = a.nodeName.toLowerCase();
           return b === "input" && "button" === a.type || b === "button";
         },
-        input: function input(a) {
+        input: function (a) {
           return /input|select|textarea|button/i.test(a.nodeName);
         },
-        focus: function focus(a) {
+        focus: function (a) {
           return a === a.ownerDocument.activeElement;
         }
       },
       setFilters: {
-        first: function first(a, b) {
+        first: function (a, b) {
           return b === 0;
         },
-        last: function last(a, b, c, d) {
+        last: function (a, b, c, d) {
           return b === d.length - 1;
         },
-        even: function even(a, b) {
+        even: function (a, b) {
           return b % 2 === 0;
         },
-        odd: function odd(a, b) {
+        odd: function (a, b) {
           return b % 2 === 1;
         },
-        lt: function lt(a, b, c) {
+        lt: function (a, b, c) {
           return b < c[3] - 0;
         },
-        gt: function gt(a, b, c) {
+        gt: function (a, b, c) {
           return b > c[3] - 0;
         },
-        nth: function nth(a, b, c) {
+        nth: function (a, b, c) {
           return c[3] - 0 === b;
         },
-        eq: function eq(a, b, c) {
+        eq: function (a, b, c) {
           return c[3] - 0 === b;
         }
       },
       filter: {
-        PSEUDO: function PSEUDO(a, b, c, d) {
+        PSEUDO: function (a, b, c, d) {
           var e = b[1],
               f = o.filters[e];
           if (f) return f(a, c, b, d);
@@ -2774,16 +2627,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           if (e === "not") {
             var g = b[3];
 
-            for (var h = 0, i = g.length; h < i; h++) {
-              if (g[h] === a) return !1;
-            }
+            for (var h = 0, i = g.length; h < i; h++) if (g[h] === a) return !1;
 
             return !0;
           }
 
-          _m2.error(e);
+          m.error(e);
         },
-        CHILD: function CHILD(a, b) {
+        CHILD: function (a, b) {
           var c,
               e,
               f,
@@ -2797,17 +2648,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           switch (k) {
             case "only":
             case "first":
-              while (l = l.previousSibling) {
-                if (l.nodeType === 1) return !1;
-              }
+              while (l = l.previousSibling) if (l.nodeType === 1) return !1;
 
               if (k === "first") return !0;
               l = a;
 
             case "last":
-              while (l = l.nextSibling) {
-                if (l.nodeType === 1) return !1;
-              }
+              while (l = l.nextSibling) if (l.nodeType === 1) return !1;
 
               return !0;
 
@@ -2819,9 +2666,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
               if (g && (g[d] !== f || !a.nodeIndex)) {
                 i = 0;
 
-                for (l = g.firstChild; l; l = l.nextSibling) {
-                  l.nodeType === 1 && (l.nodeIndex = ++i);
-                }
+                for (l = g.firstChild; l; l = l.nextSibling) l.nodeType === 1 && (l.nodeIndex = ++i);
 
                 g[d] = f;
               }
@@ -2830,24 +2675,24 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
               return c === 0 ? j === 0 : j % c === 0 && j / c >= 0;
           }
         },
-        ID: function ID(a, b) {
+        ID: function (a, b) {
           return a.nodeType === 1 && a.getAttribute("id") === b;
         },
-        TAG: function TAG(a, b) {
+        TAG: function (a, b) {
           return b === "*" && a.nodeType === 1 || !!a.nodeName && a.nodeName.toLowerCase() === b;
         },
-        CLASS: function CLASS(a, b) {
+        CLASS: function (a, b) {
           return (" " + (a.className || a.getAttribute("class")) + " ").indexOf(b) > -1;
         },
-        ATTR: function ATTR(a, b) {
+        ATTR: function (a, b) {
           var c = b[1],
-              d = _m2.attr ? _m2.attr(a, c) : o.attrHandle[c] ? o.attrHandle[c](a) : a[c] != null ? a[c] : a.getAttribute(c),
+              d = m.attr ? m.attr(a, c) : o.attrHandle[c] ? o.attrHandle[c](a) : a[c] != null ? a[c] : a.getAttribute(c),
               e = d + "",
               f = b[2],
               g = b[4];
-          return d == null ? f === "!=" : !f && _m2.attr ? d != null : f === "=" ? e === g : f === "*=" ? e.indexOf(g) >= 0 : f === "~=" ? (" " + e + " ").indexOf(g) >= 0 : g ? f === "!=" ? e !== g : f === "^=" ? e.indexOf(g) === 0 : f === "$=" ? e.substr(e.length - g.length) === g : f === "|=" ? e === g || e.substr(0, g.length + 1) === g + "-" : !1 : e && d !== !1;
+          return d == null ? f === "!=" : !f && m.attr ? d != null : f === "=" ? e === g : f === "*=" ? e.indexOf(g) >= 0 : f === "~=" ? (" " + e + " ").indexOf(g) >= 0 : g ? f === "!=" ? e !== g : f === "^=" ? e.indexOf(g) === 0 : f === "$=" ? e.substr(e.length - g.length) === g : f === "|=" ? e === g || e.substr(0, g.length + 1) === g + "-" : !1 : e && d !== !1;
         },
-        POS: function POS(a, b, c, d) {
+        POS: function (a, b, c, d) {
           var e = b[2],
               f = o.setFilters[e];
           if (f) return f(a, c, b, d);
@@ -2855,17 +2700,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
     },
         p = o.match.POS,
-        q = function q(a, b) {
+        q = function (a, b) {
       return "\\" + (b - 0 + 1);
     };
 
-    for (var r in o.match) {
-      o.match[r] = new RegExp(o.match[r].source + /(?![^\[]*\])(?![^\(]*\))/.source), o.leftMatch[r] = new RegExp(/(^(?:.|\r|\n)*?)/.source + o.match[r].source.replace(/\\(\d+)/g, q));
-    }
+    for (var r in o.match) o.match[r] = new RegExp(o.match[r].source + /(?![^\[]*\])(?![^\(]*\))/.source), o.leftMatch[r] = new RegExp(/(^(?:.|\r|\n)*?)/.source + o.match[r].source.replace(/\\(\d+)/g, q));
 
     o.match.globalPOS = p;
 
-    var s = function s(a, b) {
+    var s = function (a, b) {
       a = Array.prototype.slice.call(a, 0);
 
       if (b) {
@@ -2879,20 +2722,16 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     try {
       Array.prototype.slice.call(c.documentElement.childNodes, 0)[0].nodeType;
     } catch (t) {
-      s = function s(a, b) {
+      s = function (a, b) {
         var c = 0,
             d = b || [];
-        if (g.call(a) === "[object Array]") Array.prototype.push.apply(d, a);else if (typeof a.length == "number") for (var e = a.length; c < e; c++) {
-          d.push(a[c]);
-        } else for (; a[c]; c++) {
-          d.push(a[c]);
-        }
+        if (g.call(a) === "[object Array]") Array.prototype.push.apply(d, a);else if (typeof a.length == "number") for (var e = a.length; c < e; c++) d.push(a[c]);else for (; a[c]; c++) d.push(a[c]);
         return d;
       };
     }
 
     var u, v;
-    c.documentElement.compareDocumentPosition ? u = function u(a, b) {
+    c.documentElement.compareDocumentPosition ? u = function (a, b) {
       if (a === b) {
         h = !0;
         return 0;
@@ -2900,7 +2739,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
       if (!a.compareDocumentPosition || !b.compareDocumentPosition) return a.compareDocumentPosition ? -1 : 1;
       return a.compareDocumentPosition(b) & 4 ? -1 : 1;
-    } : (u = function u(a, b) {
+    } : (u = function (a, b) {
       if (a === b) {
         h = !0;
         return 0;
@@ -2918,24 +2757,18 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       if (!g) return -1;
       if (!i) return 1;
 
-      while (j) {
-        e.unshift(j), j = j.parentNode;
-      }
+      while (j) e.unshift(j), j = j.parentNode;
 
       j = i;
 
-      while (j) {
-        f.unshift(j), j = j.parentNode;
-      }
+      while (j) f.unshift(j), j = j.parentNode;
 
       c = e.length, d = f.length;
 
-      for (var k = 0; k < c && k < d; k++) {
-        if (e[k] !== f[k]) return v(e[k], f[k]);
-      }
+      for (var k = 0; k < c && k < d; k++) if (e[k] !== f[k]) return v(e[k], f[k]);
 
       return k === c ? v(a, f[k], -1) : v(e[k], b, 1);
-    }, v = function v(a, b, c) {
+    }, v = function (a, b, c) {
       if (a === b) return c;
       var d = a.nextSibling;
 
@@ -2966,9 +2799,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         if (a[1] === "*") {
           var d = [];
 
-          for (var e = 0; c[e]; e++) {
-            c[e].nodeType === 1 && d.push(c[e]);
-          }
+          for (var e = 0; c[e]; e++) c[e].nodeType === 1 && d.push(c[e]);
 
           c = d;
         }
@@ -2978,16 +2809,16 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         return a.getAttribute("href", 2);
       }), a = null;
     }(), c.querySelectorAll && function () {
-      var a = _m2,
+      var a = m,
           b = c.createElement("div"),
           d = "__sizzle__";
       b.innerHTML = "<p class='TEST'></p>";
 
       if (!b.querySelectorAll || b.querySelectorAll(".TEST").length !== 0) {
-        _m2 = function _m(b, e, f, g) {
+        m = function (b, e, f, g) {
           e = e || c;
 
-          if (!g && !_m2.isXML(e)) {
+          if (!g && !m.isXML(e)) {
             var h = /^(\w+$)|^\.([\w\-]+$)|^#([\w\-]+$)/.exec(b);
 
             if (h && (e.nodeType === 1 || e.nodeType === 9)) {
@@ -3026,9 +2857,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           return a(b, e, f, g);
         };
 
-        for (var e in a) {
-          _m2[e] = a[e];
-        }
+        for (var e in a) m[e] = a[e];
 
         b = null;
       }
@@ -3046,15 +2875,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           e = !0;
         }
 
-        _m2.matchesSelector = function (a, c) {
+        m.matchesSelector = function (a, c) {
           c = c.replace(/\=\s*([^'"\]]*)\s*\]/g, "='$1']");
-          if (!_m2.isXML(a)) try {
+          if (!m.isXML(a)) try {
             if (e || !o.match.PSEUDO.test(c) && !/!=/.test(c)) {
               var f = b.call(a, c);
               if (f || !d || a.document && a.document.nodeType !== 11) return f;
             }
           } catch (g) {}
-          return _m2(c, null, null, [a]).length > 0;
+          return m(c, null, null, [a]).length > 0;
         };
       }
     }(), function () {
@@ -3068,37 +2897,33 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           if (typeof b.getElementsByClassName != "undefined" && !c) return b.getElementsByClassName(a[1]);
         }, a = null;
       }
-    }(), c.documentElement.contains ? _m2.contains = function (a, b) {
+    }(), c.documentElement.contains ? m.contains = function (a, b) {
       return a !== b && (a.contains ? a.contains(b) : !0);
-    } : c.documentElement.compareDocumentPosition ? _m2.contains = function (a, b) {
+    } : c.documentElement.compareDocumentPosition ? m.contains = function (a, b) {
       return !!(a.compareDocumentPosition(b) & 16);
-    } : _m2.contains = function () {
+    } : m.contains = function () {
       return !1;
-    }, _m2.isXML = function (a) {
+    }, m.isXML = function (a) {
       var b = (a ? a.ownerDocument || a : 0).documentElement;
       return b ? b.nodeName !== "HTML" : !1;
     };
 
-    var y = function y(a, b, c) {
+    var y = function (a, b, c) {
       var d,
           e = [],
           f = "",
           g = b.nodeType ? [b] : b;
 
-      while (d = o.match.PSEUDO.exec(a)) {
-        f += d[0], a = a.replace(o.match.PSEUDO, "");
-      }
+      while (d = o.match.PSEUDO.exec(a)) f += d[0], a = a.replace(o.match.PSEUDO, "");
 
       a = o.relative[a] ? a + "*" : a;
 
-      for (var h = 0, i = g.length; h < i; h++) {
-        _m2(a, g[h], e, c);
-      }
+      for (var h = 0, i = g.length; h < i; h++) m(a, g[h], e, c);
 
-      return _m2.filter(f, e);
+      return m.filter(f, e);
     };
 
-    _m2.attr = f.attr, _m2.selectors.attrMap = {}, f.find = _m2, f.expr = _m2.selectors, f.expr[":"] = f.expr.filters, f.unique = _m2.uniqueSort, f.text = _m2.getText, f.isXMLDoc = _m2.isXML, f.contains = _m2.contains;
+    m.attr = f.attr, m.selectors.attrMap = {}, f.find = m, f.expr = m.selectors, f.expr[":"] = f.expr.filters, f.unique = m.uniqueSort, f.text = m.getText, f.isXMLDoc = m.isXML, f.contains = m.contains;
   }();
   var L = /Until$/,
       M = /^(?:parents|prevUntil|prevAll)/,
@@ -3113,14 +2938,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     prev: !0
   };
   f.fn.extend({
-    find: function find(a) {
+    find: function (a) {
       var b = this,
           c,
           d;
       if (typeof a != "string") return f(a).filter(function () {
-        for (c = 0, d = b.length; c < d; c++) {
-          if (f.contains(b[c], this)) return !0;
-        }
+        for (c = 0, d = b.length; c < d; c++) if (f.contains(b[c], this)) return !0;
       });
       var e = this.pushStack("", "find", a),
           g,
@@ -3129,36 +2952,30 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
       for (c = 0, d = this.length; c < d; c++) {
         g = e.length, f.find(a, this[c], e);
-        if (c > 0) for (h = g; h < e.length; h++) {
-          for (i = 0; i < g; i++) {
-            if (e[i] === e[h]) {
-              e.splice(h--, 1);
-              break;
-            }
-          }
+        if (c > 0) for (h = g; h < e.length; h++) for (i = 0; i < g; i++) if (e[i] === e[h]) {
+          e.splice(h--, 1);
+          break;
         }
       }
 
       return e;
     },
-    has: function has(a) {
+    has: function (a) {
       var b = f(a);
       return this.filter(function () {
-        for (var a = 0, c = b.length; a < c; a++) {
-          if (f.contains(this, b[a])) return !0;
-        }
+        for (var a = 0, c = b.length; a < c; a++) if (f.contains(this, b[a])) return !0;
       });
     },
-    not: function not(a) {
+    not: function (a) {
       return this.pushStack(T(this, a, !1), "not", a);
     },
-    filter: function filter(a) {
+    filter: function (a) {
       return this.pushStack(T(this, a, !0), "filter", a);
     },
-    is: function is(a) {
+    is: function (a) {
       return !!a && (typeof a == "string" ? Q.test(a) ? f(a, this.context).index(this[0]) >= 0 : f.filter(a, this).length > 0 : this.filter(a).length > 0);
     },
-    closest: function closest(a, b) {
+    closest: function (a, b) {
       var c = [],
           d,
           e,
@@ -3168,13 +2985,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         var h = 1;
 
         while (g && g.ownerDocument && g !== b) {
-          for (d = 0; d < a.length; d++) {
-            f(g).is(a[d]) && c.push({
-              selector: a[d],
-              elem: g,
-              level: h
-            });
-          }
+          for (d = 0; d < a.length; d++) f(g).is(a[d]) && c.push({
+            selector: a[d],
+            elem: g,
+            level: h
+          });
 
           g = g.parentNode, h++;
         }
@@ -3201,55 +3016,55 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       c = c.length > 1 ? f.unique(c) : c;
       return this.pushStack(c, "closest", a);
     },
-    index: function index(a) {
+    index: function (a) {
       if (!a) return this[0] && this[0].parentNode ? this.prevAll().length : -1;
       if (typeof a == "string") return f.inArray(this[0], f(a));
       return f.inArray(a.jquery ? a[0] : a, this);
     },
-    add: function add(a, b) {
+    add: function (a, b) {
       var c = typeof a == "string" ? f(a, b) : f.makeArray(a && a.nodeType ? [a] : a),
           d = f.merge(this.get(), c);
       return this.pushStack(S(c[0]) || S(d[0]) ? d : f.unique(d));
     },
-    andSelf: function andSelf() {
+    andSelf: function () {
       return this.add(this.prevObject);
     }
   }), f.each({
-    parent: function parent(a) {
+    parent: function (a) {
       var b = a.parentNode;
       return b && b.nodeType !== 11 ? b : null;
     },
-    parents: function parents(a) {
+    parents: function (a) {
       return f.dir(a, "parentNode");
     },
-    parentsUntil: function parentsUntil(a, b, c) {
+    parentsUntil: function (a, b, c) {
       return f.dir(a, "parentNode", c);
     },
-    next: function next(a) {
+    next: function (a) {
       return f.nth(a, 2, "nextSibling");
     },
-    prev: function prev(a) {
+    prev: function (a) {
       return f.nth(a, 2, "previousSibling");
     },
-    nextAll: function nextAll(a) {
+    nextAll: function (a) {
       return f.dir(a, "nextSibling");
     },
-    prevAll: function prevAll(a) {
+    prevAll: function (a) {
       return f.dir(a, "previousSibling");
     },
-    nextUntil: function nextUntil(a, b, c) {
+    nextUntil: function (a, b, c) {
       return f.dir(a, "nextSibling", c);
     },
-    prevUntil: function prevUntil(a, b, c) {
+    prevUntil: function (a, b, c) {
       return f.dir(a, "previousSibling", c);
     },
-    siblings: function siblings(a) {
+    siblings: function (a) {
       return f.sibling((a.parentNode || {}).firstChild, a);
     },
-    children: function children(a) {
+    children: function (a) {
       return f.sibling(a.firstChild);
     },
-    contents: function contents(a) {
+    contents: function (a) {
       return f.nodeName(a, "iframe") ? a.contentDocument || a.contentWindow.document : f.makeArray(a.childNodes);
     }
   }, function (a, b) {
@@ -3259,36 +3074,30 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       return this.pushStack(e, a, P.call(arguments).join(","));
     };
   }), f.extend({
-    filter: function filter(a, b, c) {
+    filter: function (a, b, c) {
       c && (a = ":not(" + a + ")");
       return b.length === 1 ? f.find.matchesSelector(b[0], a) ? [b[0]] : [] : f.find.matches(a, b);
     },
-    dir: function dir(a, c, d) {
+    dir: function (a, c, d) {
       var e = [],
           g = a[c];
 
-      while (g && g.nodeType !== 9 && (d === b || g.nodeType !== 1 || !f(g).is(d))) {
-        g.nodeType === 1 && e.push(g), g = g[c];
-      }
+      while (g && g.nodeType !== 9 && (d === b || g.nodeType !== 1 || !f(g).is(d))) g.nodeType === 1 && e.push(g), g = g[c];
 
       return e;
     },
-    nth: function nth(a, b, c, d) {
+    nth: function (a, b, c, d) {
       b = b || 1;
       var e = 0;
 
-      for (; a; a = a[c]) {
-        if (a.nodeType === 1 && ++e === b) break;
-      }
+      for (; a; a = a[c]) if (a.nodeType === 1 && ++e === b) break;
 
       return a;
     },
-    sibling: function sibling(a, b) {
+    sibling: function (a, b) {
       var c = [];
 
-      for (; a; a = a.nextSibling) {
-        a.nodeType === 1 && a !== b && c.push(a);
-      }
+      for (; a; a = a.nextSibling) a.nodeType === 1 && a !== b && c.push(a);
 
       return c;
     }
@@ -3318,12 +3127,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   },
       bh = U(c);
   bg.optgroup = bg.option, bg.tbody = bg.tfoot = bg.colgroup = bg.caption = bg.thead, bg.th = bg.td, f.support.htmlSerialize || (bg._default = [1, "div<div>", "</div>"]), f.fn.extend({
-    text: function text(a) {
+    text: function (a) {
       return f.access(this, function (a) {
         return a === b ? f.text(this) : this.empty().append((this[0] && this[0].ownerDocument || c).createTextNode(a));
       }, null, a, arguments.length);
     },
-    wrapAll: function wrapAll(a) {
+    wrapAll: function (a) {
       if (f.isFunction(a)) return this.each(function (b) {
         f(this).wrapAll(a.call(this, b));
       });
@@ -3333,9 +3142,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         this[0].parentNode && b.insertBefore(this[0]), b.map(function () {
           var a = this;
 
-          while (a.firstChild && a.firstChild.nodeType === 1) {
-            a = a.firstChild;
-          }
+          while (a.firstChild && a.firstChild.nodeType === 1) a = a.firstChild;
 
           return a;
         }).append(this);
@@ -3343,7 +3150,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
       return this;
     },
-    wrapInner: function wrapInner(a) {
+    wrapInner: function (a) {
       if (f.isFunction(a)) return this.each(function (b) {
         f(this).wrapInner(a.call(this, b));
       });
@@ -3353,28 +3160,28 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         c.length ? c.wrapAll(a) : b.append(a);
       });
     },
-    wrap: function wrap(a) {
+    wrap: function (a) {
       var b = f.isFunction(a);
       return this.each(function (c) {
         f(this).wrapAll(b ? a.call(this, c) : a);
       });
     },
-    unwrap: function unwrap() {
+    unwrap: function () {
       return this.parent().each(function () {
         f.nodeName(this, "body") || f(this).replaceWith(this.childNodes);
       }).end();
     },
-    append: function append() {
+    append: function () {
       return this.domManip(arguments, !0, function (a) {
         this.nodeType === 1 && this.appendChild(a);
       });
     },
-    prepend: function prepend() {
+    prepend: function () {
       return this.domManip(arguments, !0, function (a) {
         this.nodeType === 1 && this.insertBefore(a, this.firstChild);
       });
     },
-    before: function before() {
+    before: function () {
       if (this[0] && this[0].parentNode) return this.domManip(arguments, !1, function (a) {
         this.parentNode.insertBefore(a, this);
       });
@@ -3385,7 +3192,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         return this.pushStack(a, "before", arguments);
       }
     },
-    after: function after() {
+    after: function () {
       if (this[0] && this[0].parentNode) return this.domManip(arguments, !1, function (a) {
         this.parentNode.insertBefore(a, this.nextSibling);
       });
@@ -3396,31 +3203,27 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         return a;
       }
     },
-    remove: function remove(a, b) {
-      for (var c = 0, d; (d = this[c]) != null; c++) {
-        if (!a || f.filter(a, [d]).length) !b && d.nodeType === 1 && (f.cleanData(d.getElementsByTagName("*")), f.cleanData([d])), d.parentNode && d.parentNode.removeChild(d);
-      }
+    remove: function (a, b) {
+      for (var c = 0, d; (d = this[c]) != null; c++) if (!a || f.filter(a, [d]).length) !b && d.nodeType === 1 && (f.cleanData(d.getElementsByTagName("*")), f.cleanData([d])), d.parentNode && d.parentNode.removeChild(d);
 
       return this;
     },
-    empty: function empty() {
+    empty: function () {
       for (var a = 0, b; (b = this[a]) != null; a++) {
         b.nodeType === 1 && f.cleanData(b.getElementsByTagName("*"));
 
-        while (b.firstChild) {
-          b.removeChild(b.firstChild);
-        }
+        while (b.firstChild) b.removeChild(b.firstChild);
       }
 
       return this;
     },
-    clone: function clone(a, b) {
+    clone: function (a, b) {
       a = a == null ? !1 : a, b = b == null ? a : b;
       return this.map(function () {
         return f.clone(this, a, b);
       });
     },
-    html: function html(a) {
+    html: function (a) {
       return f.access(this, function (a) {
         var c = this[0] || {},
             d = 0,
@@ -3431,9 +3234,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           a = a.replace(Y, "<$1></$2>");
 
           try {
-            for (; d < e; d++) {
-              c = this[d] || {}, c.nodeType === 1 && (f.cleanData(c.getElementsByTagName("*")), c.innerHTML = a);
-            }
+            for (; d < e; d++) c = this[d] || {}, c.nodeType === 1 && (f.cleanData(c.getElementsByTagName("*")), c.innerHTML = a);
 
             c = 0;
           } catch (g) {}
@@ -3442,7 +3243,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         c && this.empty().append(a);
       }, null, a, arguments.length);
     },
-    replaceWith: function replaceWith(a) {
+    replaceWith: function (a) {
       if (this[0] && this[0].parentNode) {
         if (f.isFunction(a)) return this.each(function (b) {
           var c = f(this),
@@ -3459,10 +3260,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
       return this.length ? this.pushStack(f(f.isFunction(a) ? a() : a), "replaceWith", a) : this;
     },
-    detach: function detach(a) {
+    detach: function (a) {
       return this.remove(a, !0);
     },
-    domManip: function domManip(a, c, d) {
+    domManip: function (a, c, d) {
       var e,
           g,
           h,
@@ -3485,9 +3286,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         if (g) {
           c = c && f.nodeName(g, "tr");
 
-          for (var l = 0, m = this.length, n = m - 1; l < m; l++) {
-            d.call(c ? bi(this[l], g) : this[l], e.cacheable || m > 1 && l < n ? f.clone(h, !0, !0) : h);
-          }
+          for (var l = 0, m = this.length, n = m - 1; l < m; l++) d.call(c ? bi(this[l], g) : this[l], e.cacheable || m > 1 && l < n ? f.clone(h, !0, !0) : h);
         }
 
         k.length && f.each(k, function (a, b) {
@@ -3539,7 +3338,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       return this.pushStack(d, a, e.selector);
     };
   }), f.extend({
-    clone: function clone(a, b, c) {
+    clone: function (a, b, c) {
       var d,
           e,
           g,
@@ -3548,9 +3347,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       if ((!f.support.noCloneEvent || !f.support.noCloneChecked) && (a.nodeType === 1 || a.nodeType === 11) && !f.isXMLDoc(a)) {
         bk(a, h), d = bl(a), e = bl(h);
 
-        for (g = 0; d[g]; ++g) {
-          e[g] && bk(d[g], e[g]);
-        }
+        for (g = 0; d[g]; ++g) e[g] && bk(d[g], e[g]);
       }
 
       if (b) {
@@ -3559,16 +3356,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         if (c) {
           d = bl(a), e = bl(h);
 
-          for (g = 0; d[g]; ++g) {
-            bj(d[g], e[g]);
-          }
+          for (g = 0; d[g]; ++g) bj(d[g], e[g]);
         }
       }
 
       d = e = null;
       return h;
     },
-    clean: function clean(a, b, d, e) {
+    clean: function (a, b, d, e) {
       var g,
           h,
           i,
@@ -3588,30 +3383,24 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
               r;
           b === c ? bh.appendChild(p) : U(b).appendChild(p), p.innerHTML = n[1] + l + n[2];
 
-          while (o--) {
-            p = p.lastChild;
-          }
+          while (o--) p = p.lastChild;
 
           if (!f.support.tbody) {
             var s = $.test(l),
                 t = m === "table" && !s ? p.firstChild && p.firstChild.childNodes : n[1] === "<table>" && !s ? p.childNodes : [];
 
-            for (i = t.length - 1; i >= 0; --i) {
-              f.nodeName(t[i], "tbody") && !t[i].childNodes.length && t[i].parentNode.removeChild(t[i]);
-            }
+            for (i = t.length - 1; i >= 0; --i) f.nodeName(t[i], "tbody") && !t[i].childNodes.length && t[i].parentNode.removeChild(t[i]);
           }
 
           !f.support.leadingWhitespace && X.test(l) && p.insertBefore(b.createTextNode(X.exec(l)[0]), p.firstChild), l = p.childNodes, p && (p.parentNode.removeChild(p), q.length > 0 && (r = q[q.length - 1], r && r.parentNode && r.parentNode.removeChild(r)));
         }
         var u;
-        if (!f.support.appendChecked) if (l[0] && typeof (u = l.length) == "number") for (i = 0; i < u; i++) {
-          bn(l[i]);
-        } else bn(l);
+        if (!f.support.appendChecked) if (l[0] && typeof (u = l.length) == "number") for (i = 0; i < u; i++) bn(l[i]);else bn(l);
         l.nodeType ? j.push(l) : j = f.merge(j, l);
       }
 
       if (d) {
-        g = function g(a) {
+        g = function (a) {
           return !a.type || be.test(a.type);
         };
 
@@ -3630,7 +3419,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
       return j;
     },
-    cleanData: function cleanData(a) {
+    cleanData: function (a) {
       var b,
           c,
           d = f.cache,
@@ -3645,9 +3434,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           b = d[c];
 
           if (b && b.events) {
-            for (var j in b.events) {
-              e[j] ? f.event.remove(i, j) : f.removeEvent(i, j, b.handle);
-            }
+            for (var j in b.events) e[j] ? f.event.remove(i, j) : f.removeEvent(i, j, b.handle);
 
             b.handle && (b.handle.elem = null);
           }
@@ -3680,7 +3467,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   }, f.extend({
     cssHooks: {
       opacity: {
-        get: function get(a, b) {
+        get: function (a, b) {
           if (b) {
             var c = by(a, "opacity");
             return c === "" ? "1" : c;
@@ -3703,7 +3490,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     cssProps: {
       "float": f.support.cssFloat ? "cssFloat" : "styleFloat"
     },
-    style: function style(a, c, d, e) {
+    style: function (a, c, d, e) {
       if (!!a && a.nodeType !== 3 && a.nodeType !== 8 && !!a.style) {
         var g,
             h,
@@ -3717,7 +3504,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           return j[c];
         }
 
-        h = _typeof(d), h === "string" && (g = bu.exec(d)) && (d = +(g[1] + 1) * +g[2] + parseFloat(f.css(a, c)), h = "number");
+        h = typeof d, h === "string" && (g = bu.exec(d)) && (d = +(g[1] + 1) * +g[2] + parseFloat(f.css(a, c)), h = "number");
         if (d == null || h === "number" && isNaN(d)) return;
         h === "number" && !f.cssNumber[i] && (d += "px");
         if (!k || !("set" in k) || (d = k.set(a, d)) !== b) try {
@@ -3725,30 +3512,26 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         } catch (l) {}
       }
     },
-    css: function css(a, c, d) {
+    css: function (a, c, d) {
       var e, g;
       c = f.camelCase(c), g = f.cssHooks[c], c = f.cssProps[c] || c, c === "cssFloat" && (c = "float");
       if (g && "get" in g && (e = g.get(a, !0, d)) !== b) return e;
       if (by) return by(a, c);
     },
-    swap: function swap(a, b, c) {
+    swap: function (a, b, c) {
       var d = {},
           e,
           f;
 
-      for (f in b) {
-        d[f] = a.style[f], a.style[f] = b[f];
-      }
+      for (f in b) d[f] = a.style[f], a.style[f] = b[f];
 
       e = c.call(a);
 
-      for (f in b) {
-        a.style[f] = d[f];
-      }
+      for (f in b) a.style[f] = d[f];
 
       return e;
     }
-  }), f.curCSS = f.css, c.defaultView && c.defaultView.getComputedStyle && (bz = function bz(a, b) {
+  }), f.curCSS = f.css, c.defaultView && c.defaultView.getComputedStyle && (bz = function (a, b) {
     var c,
         d,
         e,
@@ -3756,7 +3539,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         h = a.style;
     b = b.replace(br, "-$1").toLowerCase(), (d = a.ownerDocument.defaultView) && (e = d.getComputedStyle(a, null)) && (c = e.getPropertyValue(b), c === "" && !f.contains(a.ownerDocument.documentElement, a) && (c = f.style(a, b))), !f.support.pixelMargin && e && bv.test(b) && bt.test(c) && (g = h.width, h.width = c, c = e.width, h.width = g);
     return c;
-  }), c.documentElement.currentStyle && (bA = function bA(a, b) {
+  }), c.documentElement.currentStyle && (bA = function (a, b) {
     var c,
         d,
         e,
@@ -3766,20 +3549,20 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     return f === "" ? "auto" : f;
   }), by = bz || bA, f.each(["height", "width"], function (a, b) {
     f.cssHooks[b] = {
-      get: function get(a, c, d) {
+      get: function (a, c, d) {
         if (c) return a.offsetWidth !== 0 ? bB(a, b, d) : f.swap(a, bw, function () {
           return bB(a, b, d);
         });
       },
-      set: function set(a, b) {
+      set: function (a, b) {
         return bs.test(b) ? b + "px" : b;
       }
     };
   }), f.support.opacity || (f.cssHooks.opacity = {
-    get: function get(a, b) {
+    get: function (a, b) {
       return bq.test((b && a.currentStyle ? a.currentStyle.filter : a.style.filter) || "") ? parseFloat(RegExp.$1) / 100 + "" : b ? "1" : "";
     },
-    set: function set(a, b) {
+    set: function (a, b) {
       var c = a.style,
           d = a.currentStyle,
           e = f.isNumeric(b) ? "alpha(opacity=" + b * 100 + ")" : "",
@@ -3795,7 +3578,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     }
   }), f(function () {
     f.support.reliableMarginRight || (f.cssHooks.marginRight = {
-      get: function get(a, b) {
+      get: function (a, b) {
         return f.swap(a, {
           display: "inline-block"
         }, function () {
@@ -3815,14 +3598,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     border: "Width"
   }, function (a, b) {
     f.cssHooks[a + b] = {
-      expand: function expand(c) {
+      expand: function (c) {
         var d,
             e = typeof c == "string" ? c.split(" ") : [c],
             f = {};
 
-        for (d = 0; d < 4; d++) {
-          f[a + bx[d] + b] = e[d] || e[d - 2] || e[0];
-        }
+        for (d = 0; d < 4; d++) f[a + bx[d] + b] = e[d] || e[d - 2] || e[0];
 
         return f;
       }
@@ -3857,7 +3638,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   }
 
   bV = bQ.exec(bU.toLowerCase()) || [], f.fn.extend({
-    load: function load(a, c, d) {
+    load: function (a, c, d) {
       if (typeof a != "string" && bR) return bR.apply(this, arguments);
       if (!this.length) return this;
       var e = a.indexOf(" ");
@@ -3868,14 +3649,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
 
       var h = "GET";
-      c && (f.isFunction(c) ? (d = c, c = b) : _typeof(c) == "object" && (c = f.param(c, f.ajaxSettings.traditional), h = "POST"));
+      c && (f.isFunction(c) ? (d = c, c = b) : typeof c == "object" && (c = f.param(c, f.ajaxSettings.traditional), h = "POST"));
       var i = this;
       f.ajax({
         url: a,
         type: h,
         dataType: "html",
         data: c,
-        complete: function complete(a, b, c) {
+        complete: function (a, b, c) {
           c = a.responseText, a.isResolved() && (a.done(function (a) {
             c = a;
           }), i.html(g ? f("<div>").append(c.replace(bM, "")).find(g) : c)), d && i.each(d, [c, b, a]);
@@ -3883,10 +3664,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       });
       return this;
     },
-    serialize: function serialize() {
+    serialize: function () {
       return f.param(this.serializeArray());
     },
-    serializeArray: function serializeArray() {
+    serializeArray: function () {
       return this.map(function () {
         return this.elements ? f.makeArray(this.elements) : this;
       }).filter(function () {
@@ -3920,13 +3701,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       });
     };
   }), f.extend({
-    getScript: function getScript(a, c) {
+    getScript: function (a, c) {
       return f.get(a, b, c, "script");
     },
-    getJSON: function getJSON(a, b, c) {
+    getJSON: function (a, b, c) {
       return f.get(a, b, c, "json");
     },
-    ajaxSetup: function ajaxSetup(a, b) {
+    ajaxSetup: function (a, b) {
       b ? b$(a, f.ajaxSettings) : (b = a, a = f.ajaxSettings), b$(a, b);
       return a;
     },
@@ -3967,7 +3748,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     },
     ajaxPrefilter: bY(bS),
     ajaxTransport: bY(bT),
-    ajax: function ajax(a, c) {
+    ajax: function (a, c) {
       function w(a, c, l, m) {
         if (s !== 2) {
           s = 2, q && clearTimeout(q), p = b, n = m || "", v.readyState = a > 0 ? 4 : 0;
@@ -3999,7 +3780,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }
       }
 
-      _typeof(a) == "object" && (c = a, a = b), c = c || {};
+      typeof a == "object" && (c = a, a = b), c = c || {};
       var d = f.ajaxSetup({}, c),
           e = d.context || d,
           g = e !== d && (e.nodeType || e instanceof f) ? f(e) : f.event,
@@ -4019,7 +3800,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           u,
           v = {
         readyState: 0,
-        setRequestHeader: function setRequestHeader(a, b) {
+        setRequestHeader: function (a, b) {
           if (!s) {
             var c = a.toLowerCase();
             a = m[c] = m[c] || a, l[a] = b;
@@ -4027,19 +3808,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
           return this;
         },
-        getAllResponseHeaders: function getAllResponseHeaders() {
+        getAllResponseHeaders: function () {
           return s === 2 ? n : null;
         },
-        getResponseHeader: function getResponseHeader(a) {
+        getResponseHeader: function (a) {
           var c;
 
           if (s === 2) {
             if (!o) {
               o = {};
 
-              while (c = bG.exec(n)) {
-                o[c[1].toLowerCase()] = c[2];
-              }
+              while (c = bG.exec(n)) o[c[1].toLowerCase()] = c[2];
             }
 
             c = o[a.toLowerCase()];
@@ -4047,11 +3826,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
           return c === b ? null : c;
         },
-        overrideMimeType: function overrideMimeType(a) {
+        overrideMimeType: function (a) {
           s || (d.mimeType = a);
           return this;
         },
-        abort: function abort(a) {
+        abort: function (a) {
           a = a || "abort", p && p.abort(a), w(0, a);
           return this;
         }
@@ -4059,9 +3838,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       h.promise(v), v.success = v.done, v.error = v.fail, v.complete = i.add, v.statusCode = function (a) {
         if (a) {
           var b;
-          if (s < 2) for (b in a) {
-            j[b] = [j[b], a[b]];
-          } else b = a[v.status], v.then(b, b);
+          if (s < 2) for (b in a) j[b] = [j[b], a[b]];else b = a[v.status], v.then(b, b);
         }
 
         return this;
@@ -4081,9 +3858,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
       (d.data && d.hasContent && d.contentType !== !1 || c.contentType) && v.setRequestHeader("Content-Type", d.contentType), d.ifModified && (k = k || d.url, f.lastModified[k] && v.setRequestHeader("If-Modified-Since", f.lastModified[k]), f.etag[k] && v.setRequestHeader("If-None-Match", f.etag[k])), v.setRequestHeader("Accept", d.dataTypes[0] && d.accepts[d.dataTypes[0]] ? d.accepts[d.dataTypes[0]] + (d.dataTypes[0] !== "*" ? ", " + bW + "; q=0.01" : "") : d.accepts["*"]);
 
-      for (u in d.headers) {
-        v.setRequestHeader(u, d.headers[u]);
-      }
+      for (u in d.headers) v.setRequestHeader(u, d.headers[u]);
 
       if (d.beforeSend && (d.beforeSend.call(e, v, d) === !1 || s === 2)) {
         v.abort();
@@ -4094,9 +3869,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         success: 1,
         error: 1,
         complete: 1
-      }) {
-        v[u](d[u]);
-      }
+      }) v[u](d[u]);
 
       p = bZ(bT, d, c, v);
       if (!p) w(-1, "No Transport");else {
@@ -4112,18 +3885,16 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
       return v;
     },
-    param: function param(a, c) {
+    param: function (a, c) {
       var d = [],
-          e = function e(a, b) {
+          e = function (a, b) {
         b = f.isFunction(b) ? b() : b, d[d.length] = encodeURIComponent(a) + "=" + encodeURIComponent(b);
       };
 
       c === b && (c = f.ajaxSettings.traditional);
       if (f.isArray(a) || a.jquery && !f.isPlainObject(a)) f.each(a, function () {
         e(this.name, this.value);
-      });else for (var g in a) {
-        b_(g, a[g], c, e);
-      }
+      });else for (var g in a) b_(g, a[g], c, e);
       return d.join("&").replace(bC, "+");
     }
   }), f.extend({
@@ -4135,7 +3906,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       cd = /(\=)\?(&|$)|\?\?/i;
   f.ajaxSetup({
     jsonp: "callback",
-    jsonpCallback: function jsonpCallback() {
+    jsonpCallback: function () {
       return f.expando + "_" + cc++;
     }
   }), f.ajaxPrefilter("json jsonp", function (b, c, d) {
@@ -4166,7 +3937,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       script: /javascript|ecmascript/
     },
     converters: {
-      "text script": function textScript(a) {
+      "text script": function (a) {
         f.globalEval(a);
         return a;
       }
@@ -4178,21 +3949,19 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       var d,
           e = c.head || c.getElementsByTagName("head")[0] || c.documentElement;
       return {
-        send: function send(f, g) {
+        send: function (f, g) {
           d = c.createElement("script"), d.async = "async", a.scriptCharset && (d.charset = a.scriptCharset), d.src = a.url, d.onload = d.onreadystatechange = function (a, c) {
             if (c || !d.readyState || /loaded|complete/.test(d.readyState)) d.onload = d.onreadystatechange = null, e && d.parentNode && e.removeChild(d), d = b, c || g(200, "success");
           }, e.insertBefore(d, e.firstChild);
         },
-        abort: function abort() {
+        abort: function () {
           d && d.onload(0, 1);
         }
       };
     }
   });
   var ce = a.ActiveXObject ? function () {
-    for (var a in cg) {
-      cg[a](0, 1);
-    }
+    for (var a in cg) cg[a](0, 1);
   } : !1,
       cf = 0,
       cg;
@@ -4205,31 +3974,26 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     });
   }(f.ajaxSettings.xhr()), f.support.ajax && f.ajaxTransport(function (c) {
     if (!c.crossDomain || f.support.cors) {
-      var _d;
-
+      var d;
       return {
-        send: function send(e, g) {
+        send: function (e, g) {
           var h = c.xhr(),
               i,
               j;
           c.username ? h.open(c.type, c.url, c.async, c.username, c.password) : h.open(c.type, c.url, c.async);
-          if (c.xhrFields) for (j in c.xhrFields) {
-            h[j] = c.xhrFields[j];
-          }
+          if (c.xhrFields) for (j in c.xhrFields) h[j] = c.xhrFields[j];
           c.mimeType && h.overrideMimeType && h.overrideMimeType(c.mimeType), !c.crossDomain && !e["X-Requested-With"] && (e["X-Requested-With"] = "XMLHttpRequest");
 
           try {
-            for (j in e) {
-              h.setRequestHeader(j, e[j]);
-            }
+            for (j in e) h.setRequestHeader(j, e[j]);
           } catch (k) {}
 
-          h.send(c.hasContent && c.data || null), _d = function d(a, e) {
+          h.send(c.hasContent && c.data || null), d = function (a, e) {
             var j, k, l, m, n;
 
             try {
-              if (_d && (e || h.readyState === 4)) {
-                _d = b, i && (h.onreadystatechange = f.noop, ce && delete cg[i]);
+              if (d && (e || h.readyState === 4)) {
+                d = b, i && (h.onreadystatechange = f.noop, ce && delete cg[i]);
                 if (e) h.readyState !== 4 && h.abort();else {
                   j = h.status, l = h.getAllResponseHeaders(), m = {}, n = h.responseXML, n && n.documentElement && (m.xml = n);
 
@@ -4251,10 +4015,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
             }
 
             m && g(j, k, m, l);
-          }, !c.async || h.readyState === 4 ? _d() : (i = ++cf, ce && (cg || (cg = {}, f(a).unload(ce)), cg[i] = _d), h.onreadystatechange = _d);
+          }, !c.async || h.readyState === 4 ? d() : (i = ++cf, ce && (cg || (cg = {}, f(a).unload(ce)), cg[i] = d), h.onreadystatechange = d);
         },
-        abort: function abort() {
-          _d && _d(0, 1);
+        abort: function () {
+          d && d(0, 1);
         }
       };
     }
@@ -4268,13 +4032,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       cp = [["height", "marginTop", "marginBottom", "paddingTop", "paddingBottom"], ["width", "marginLeft", "marginRight", "paddingLeft", "paddingRight"], ["opacity"]],
       cq;
   f.fn.extend({
-    show: function show(a, b, c) {
+    show: function (a, b, c) {
       var d, e;
       if (a || a === 0) return this.animate(ct("show", 3), a, b, c);
 
-      for (var g = 0, h = this.length; g < h; g++) {
-        d = this[g], d.style && (e = d.style.display, !f._data(d, "olddisplay") && e === "none" && (e = d.style.display = ""), (e === "" && f.css(d, "display") === "none" || !f.contains(d.ownerDocument.documentElement, d)) && f._data(d, "olddisplay", cu(d.nodeName)));
-      }
+      for (var g = 0, h = this.length; g < h; g++) d = this[g], d.style && (e = d.style.display, !f._data(d, "olddisplay") && e === "none" && (e = d.style.display = ""), (e === "" && f.css(d, "display") === "none" || !f.contains(d.ownerDocument.documentElement, d)) && f._data(d, "olddisplay", cu(d.nodeName)));
 
       for (g = 0; g < h; g++) {
         d = this[g];
@@ -4287,25 +4049,21 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
       return this;
     },
-    hide: function hide(a, b, c) {
+    hide: function (a, b, c) {
       if (a || a === 0) return this.animate(ct("hide", 3), a, b, c);
       var d,
           e,
           g = 0,
           h = this.length;
 
-      for (; g < h; g++) {
-        d = this[g], d.style && (e = f.css(d, "display"), e !== "none" && !f._data(d, "olddisplay") && f._data(d, "olddisplay", e));
-      }
+      for (; g < h; g++) d = this[g], d.style && (e = f.css(d, "display"), e !== "none" && !f._data(d, "olddisplay") && f._data(d, "olddisplay", e));
 
-      for (g = 0; g < h; g++) {
-        this[g].style && (this[g].style.display = "none");
-      }
+      for (g = 0; g < h; g++) this[g].style && (this[g].style.display = "none");
 
       return this;
     },
     _toggle: f.fn.toggle,
-    toggle: function toggle(a, b, c) {
+    toggle: function (a, b, c) {
       var d = typeof a == "boolean";
       f.isFunction(a) && f.isFunction(b) ? this._toggle.apply(this, arguments) : a == null || d ? this.each(function () {
         var b = d ? a : f(this).is(":hidden");
@@ -4313,12 +4071,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }) : this.animate(ct("toggle", 3), a, b, c);
       return this;
     },
-    fadeTo: function fadeTo(a, b, c, d) {
+    fadeTo: function (a, b, c, d) {
       return this.filter(":hidden").css("opacity", 0).show().end().animate({
         opacity: b
       }, a, c, d);
     },
-    animate: function animate(a, b, c, d) {
+    animate: function (a, b, c, d) {
       function g() {
         e.queue === !1 && f._mark(this);
         var b = f.extend({}, e),
@@ -4343,9 +4101,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           if ((k = f.cssHooks[g]) && "expand" in k) {
             l = k.expand(a[g]), delete a[g];
 
-            for (i in l) {
-              i in a || (a[i] = l[i]);
-            }
+            for (i in l) i in a || (a[i] = l[i]);
           }
         }
 
@@ -4357,9 +4113,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
         b.overflow != null && (this.style.overflow = "hidden");
 
-        for (i in a) {
-          j = new f.fx(this, b, i), h = a[i], cm.test(h) ? (q = f._data(this, "toggle" + i) || (h === "toggle" ? d ? "show" : "hide" : 0), q ? (f._data(this, "toggle" + i, q === "show" ? "hide" : "show"), j[q]()) : j[h]()) : (m = cn.exec(h), n = j.cur(), m ? (o = parseFloat(m[2]), p = m[3] || (f.cssNumber[i] ? "" : "px"), p !== "px" && (f.style(this, i, (o || 1) + p), n = (o || 1) / j.cur() * n, f.style(this, i, n + p)), m[1] && (o = (m[1] === "-=" ? -1 : 1) * o + n), j.custom(n, o, p)) : j.custom(n, h, ""));
-        }
+        for (i in a) j = new f.fx(this, b, i), h = a[i], cm.test(h) ? (q = f._data(this, "toggle" + i) || (h === "toggle" ? d ? "show" : "hide" : 0), q ? (f._data(this, "toggle" + i, q === "show" ? "hide" : "show"), j[q]()) : j[h]()) : (m = cn.exec(h), n = j.cur(), m ? (o = parseFloat(m[2]), p = m[3] || (f.cssNumber[i] ? "" : "px"), p !== "px" && (f.style(this, i, (o || 1) + p), n = (o || 1) / j.cur() * n, f.style(this, i, n + p)), m[1] && (o = (m[1] === "-=" ? -1 : 1) * o + n), j.custom(n, o, p)) : j.custom(n, h, ""));
 
         return !0;
       }
@@ -4369,7 +4123,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       a = f.extend({}, a);
       return e.queue === !1 ? this.each(g) : this.queue(e.queue, g);
     },
-    stop: function stop(a, c, d) {
+    stop: function (a, c, d) {
       typeof a != "string" && (d = c, c = a, a = b), c && a !== !1 && this.queue(a || "fx", []);
       return this.each(function () {
         function h(a, b, c) {
@@ -4383,13 +4137,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
             g = f._data(this);
 
         d || f._unmark(!0, this);
-        if (a == null) for (b in g) {
-          g[b] && g[b].stop && b.indexOf(".run") === b.length - 4 && h(this, g, b);
-        } else g[b = a + ".run"] && g[b].stop && h(this, g, b);
+        if (a == null) for (b in g) g[b] && g[b].stop && b.indexOf(".run") === b.length - 4 && h(this, g, b);else g[b = a + ".run"] && g[b].stop && h(this, g, b);
 
-        for (b = e.length; b--;) {
-          e[b].elem === this && (a == null || e[b].queue === a) && (d ? e[b](!0) : e[b].saveState(), c = !0, e.splice(b, 1));
-        }
+        for (b = e.length; b--;) e[b].elem === this && (a == null || e[b].queue === a) && (d ? e[b](!0) : e[b].saveState(), c = !0, e.splice(b, 1));
 
         (!d || !c) && f.dequeue(this, a);
       });
@@ -4412,8 +4162,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       return this.animate(b, a, c, d);
     };
   }), f.extend({
-    speed: function speed(a, b, c) {
-      var d = a && _typeof(a) == "object" ? f.extend({}, a) : {
+    speed: function (a, b, c) {
+      var d = a && typeof a == "object" ? f.extend({}, a) : {
         complete: c || !c && b || f.isFunction(a) && a,
         duration: a,
         easing: c && b || b && !f.isFunction(b) && b
@@ -4426,28 +4176,28 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       return d;
     },
     easing: {
-      linear: function linear(a) {
+      linear: function (a) {
         return a;
       },
-      swing: function swing(a) {
+      swing: function (a) {
         return -Math.cos(a * Math.PI) / 2 + .5;
       }
     },
     timers: [],
-    fx: function fx(a, b, c) {
+    fx: function (a, b, c) {
       this.options = b, this.elem = a, this.prop = c, b.orig = b.orig || {};
     }
   }), f.fx.prototype = {
-    update: function update() {
+    update: function () {
       this.options.step && this.options.step.call(this.elem, this.now, this), (f.fx.step[this.prop] || f.fx.step._default)(this);
     },
-    cur: function cur() {
+    cur: function () {
       if (this.elem[this.prop] != null && (!this.elem.style || this.elem.style[this.prop] == null)) return this.elem[this.prop];
       var a,
           b = f.css(this.elem, this.prop);
       return isNaN(a = parseFloat(b)) ? !b || b === "auto" ? 0 : b : a;
     },
-    custom: function custom(a, c, d) {
+    custom: function (a, c, d) {
       function h(a) {
         return e.step(a);
       }
@@ -4458,15 +4208,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         f._data(e.elem, "fxshow" + e.prop) === b && (e.options.hide ? f._data(e.elem, "fxshow" + e.prop, e.start) : e.options.show && f._data(e.elem, "fxshow" + e.prop, e.end));
       }, h() && f.timers.push(h) && !co && (co = setInterval(g.tick, g.interval));
     },
-    show: function show() {
+    show: function () {
       var a = f._data(this.elem, "fxshow" + this.prop);
 
       this.options.orig[this.prop] = a || f.style(this.elem, this.prop), this.options.show = !0, a !== b ? this.custom(this.cur(), a) : this.custom(this.prop === "width" || this.prop === "height" ? 1 : 0, this.cur()), f(this.elem).show();
     },
-    hide: function hide() {
+    hide: function () {
       this.options.orig[this.prop] = f._data(this.elem, "fxshow" + this.prop) || f.style(this.elem, this.prop), this.options.hide = !0, this.custom(this.cur(), 0);
     },
-    step: function step(a) {
+    step: function (a) {
       var b,
           c,
           d,
@@ -4478,17 +4228,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       if (a || e >= i.duration + this.startTime) {
         this.now = this.end, this.pos = this.state = 1, this.update(), i.animatedProperties[this.prop] = !0;
 
-        for (b in i.animatedProperties) {
-          i.animatedProperties[b] !== !0 && (g = !1);
-        }
+        for (b in i.animatedProperties) i.animatedProperties[b] !== !0 && (g = !1);
 
         if (g) {
           i.overflow != null && !f.support.shrinkWrapBlocks && f.each(["", "X", "Y"], function (a, b) {
             h.style["overflow" + b] = i.overflow[a];
           }), i.hide && f(h).hide();
-          if (i.hide || i.show) for (b in i.animatedProperties) {
-            f.style(h, b, i.orig[b]), f.removeData(h, "fxshow" + b, !0), f.removeData(h, "toggle" + b, !0);
-          }
+          if (i.hide || i.show) for (b in i.animatedProperties) f.style(h, b, i.orig[b]), f.removeData(h, "fxshow" + b, !0), f.removeData(h, "toggle" + b, !0);
           d = i.complete, d && (i.complete = !1, d.call(h));
         }
 
@@ -4499,19 +4245,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       return !0;
     }
   }, f.extend(f.fx, {
-    tick: function tick() {
+    tick: function () {
       var a,
           b = f.timers,
           c = 0;
 
-      for (; c < b.length; c++) {
-        a = b[c], !a() && b[c] === a && b.splice(c--, 1);
-      }
+      for (; c < b.length; c++) a = b[c], !a() && b[c] === a && b.splice(c--, 1);
 
       b.length || f.fx.stop();
     },
     interval: 13,
-    stop: function stop() {
+    stop: function () {
       clearInterval(co), co = null;
     },
     speeds: {
@@ -4520,10 +4264,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       _default: 400
     },
     step: {
-      opacity: function opacity(a) {
+      opacity: function (a) {
         f.style(a.elem, "opacity", a.now);
       },
-      _default: function _default(a) {
+      _default: function (a) {
         a.elem.style && a.elem.style[a.prop] != null ? a.elem.style[a.prop] = a.now + a.unit : a.elem[a.prop] = a.now;
       }
     }
@@ -4539,7 +4283,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   var cv,
       cw = /^t(?:able|d|h)$/i,
       cx = /^(?:body|html)$/i;
-  "getBoundingClientRect" in c.documentElement ? cv = function cv(a, b, c, d) {
+  "getBoundingClientRect" in c.documentElement ? cv = function (a, b, c, d) {
     try {
       d = a.getBoundingClientRect();
     } catch (e) {}
@@ -4563,7 +4307,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       top: m,
       left: n
     };
-  } : cv = function cv(a, b, c) {
+  } : cv = function (a, b, c) {
     var d,
         e = a.offsetParent,
         g = a,
@@ -4594,7 +4338,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     if (c === d.body) return f.offset.bodyOffset(c);
     return cv(c, d, d.documentElement);
   }, f.offset = {
-    bodyOffset: function bodyOffset(a) {
+    bodyOffset: function (a) {
       var b = a.offsetTop,
           c = a.offsetLeft;
       f.support.doesNotIncludeMarginInBodyOffset && (b += parseFloat(f.css(a, "marginTop")) || 0, c += parseFloat(f.css(a, "marginLeft")) || 0);
@@ -4603,7 +4347,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         left: c
       };
     },
-    setOffset: function setOffset(a, b, c) {
+    setOffset: function (a, b, c) {
       var d = f.css(a, "position");
       d === "static" && (a.style.position = "relative");
       var e = f(a),
@@ -4618,7 +4362,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       j ? (l = e.position(), m = l.top, n = l.left) : (m = parseFloat(h) || 0, n = parseFloat(i) || 0), f.isFunction(b) && (b = b.call(a, c, g)), b.top != null && (k.top = b.top - g.top + m), b.left != null && (k.left = b.left - g.left + n), "using" in b ? b.using.call(a, k) : e.css(k);
     }
   }, f.fn.extend({
-    position: function position() {
+    position: function () {
       if (!this[0]) return null;
       var a = this[0],
           b = this.offsetParent(),
@@ -4633,13 +4377,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         left: c.left - d.left
       };
     },
-    offsetParent: function offsetParent() {
+    offsetParent: function () {
       return this.map(function () {
         var a = this.offsetParent || c.body;
 
-        while (a && !cx.test(a.nodeName) && f.css(a, "position") === "static") {
-          a = a.offsetParent;
-        }
+        while (a && !cx.test(a.nodeName) && f.css(a, "position") === "static") a = a.offsetParent;
 
         return a;
       });
@@ -4725,7 +4467,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37297" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "34853" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -118,8 +118,6 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"js/waypoints.min.js":[function(require,module,exports) {
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
 /*
 jQuery Waypoints - v1.1.7
 Copyright (c) 2011-2012 Caleb Troughton
@@ -130,14 +128,14 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/GPL-license.txt
 (function ($, k, m, i, d) {
   var e = $(i),
       g = "waypoint.reached",
-      b = function b(o, n) {
+      b = function (o, n) {
     o.element.trigger(g, n);
 
     if (o.options.triggerOnce) {
       o.element[k]("destroy");
     }
   },
-      h = function h(p, o) {
+      h = function (p, o) {
     if (!o) {
       return -1;
     }
@@ -151,7 +149,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/GPL-license.txt
     return n;
   },
       f = [],
-      l = function l(n) {
+      l = function (n) {
     $.extend(this, {
       element: $(n),
       oldScroll: 0,
@@ -209,7 +207,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/GPL-license.txt
       this.doScroll();
     }, this));
   },
-      j = function j(n) {
+      j = function (n) {
     var o = null;
     $.each(f, function (p, q) {
       if (q.element[0] === n) {
@@ -220,7 +218,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/GPL-license.txt
     return o;
   },
       c = {
-    init: function init(o, n) {
+    init: function (o, n) {
       this.each(function () {
         var u = $.fn[k].defaults.context,
             q,
@@ -270,7 +268,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/GPL-license.txt
       $[m]("refresh");
       return this;
     },
-    remove: function remove() {
+    remove: function () {
       return this.each(function (o, p) {
         var n = $(p);
         $.each(f, function (r, s) {
@@ -287,12 +285,12 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/GPL-license.txt
         });
       });
     },
-    destroy: function destroy() {
+    destroy: function () {
       return this.unbind(g)[k]("remove");
     }
   },
       a = {
-    refresh: function refresh() {
+    refresh: function () {
       $.each(f, function (r, s) {
         var q = $.isWindow(s.element[0]),
             n = q ? 0 : s.element.offset().top,
@@ -338,10 +336,10 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/GPL-license.txt
         });
       });
     },
-    viewportHeight: function viewportHeight() {
+    viewportHeight: function () {
       return i.innerHeight ? i.innerHeight : e.height();
     },
-    aggregate: function aggregate() {
+    aggregate: function () {
       var n = $();
       $.each(f, function (o, p) {
         $.each(p.waypoints, function (q, r) {
@@ -359,7 +357,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/GPL-license.txt
       if (typeof n === "function" || !n) {
         return c.init.apply(this, arguments);
       } else {
-        if (_typeof(n) === "object") {
+        if (typeof n === "object") {
           return c.init.apply(this, [null, n]);
         } else {
           $.error("Method " + n + " does not exist on jQuery " + k);
@@ -419,7 +417,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37297" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "34853" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

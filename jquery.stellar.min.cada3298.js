@@ -118,8 +118,6 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"js/jquery.stellar.min.js":[function(require,module,exports) {
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
 /*! Stellar.js v0.6.1 | Copyright 2013, Mark Dalgleish | http://markdalgleish.com/projects/stellar.js | http://markdalgleish.mit-license.org */
 (function (e, t, n, r) {
   function d(t, n) {
@@ -138,50 +136,50 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     parallaxBackgrounds: !0,
     parallaxElements: !0,
     hideDistantElements: !0,
-    hideElement: function hideElement(e) {
+    hideElement: function (e) {
       e.hide();
     },
-    showElement: function showElement(e) {
+    showElement: function (e) {
       e.show();
     }
   },
       o = {
     scroll: {
-      getLeft: function getLeft(e) {
+      getLeft: function (e) {
         return e.scrollLeft();
       },
-      setLeft: function setLeft(e, t) {
+      setLeft: function (e, t) {
         e.scrollLeft(t);
       },
-      getTop: function getTop(e) {
+      getTop: function (e) {
         return e.scrollTop();
       },
-      setTop: function setTop(e, t) {
+      setTop: function (e, t) {
         e.scrollTop(t);
       }
     },
     position: {
-      getLeft: function getLeft(e) {
+      getLeft: function (e) {
         return parseInt(e.css("left"), 10) * -1;
       },
-      getTop: function getTop(e) {
+      getTop: function (e) {
         return parseInt(e.css("top"), 10) * -1;
       }
     },
     margin: {
-      getLeft: function getLeft(e) {
+      getLeft: function (e) {
         return parseInt(e.css("margin-left"), 10) * -1;
       },
-      getTop: function getTop(e) {
+      getTop: function (e) {
         return parseInt(e.css("margin-top"), 10) * -1;
       }
     },
     transform: {
-      getLeft: function getLeft(e) {
+      getLeft: function (e) {
         var t = getComputedStyle(e[0])[f];
         return t !== "none" ? parseInt(t.match(/(-?[0-9]+)/g)[4], 10) * -1 : 0;
       },
-      getTop: function getTop(e) {
+      getTop: function (e) {
         var t = getComputedStyle(e[0])[f];
         return t !== "none" ? parseInt(t.match(/(-?[0-9]+)/g)[5], 10) * -1 : 0;
       }
@@ -189,15 +187,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   },
       u = {
     position: {
-      setLeft: function setLeft(e, t) {
+      setLeft: function (e, t) {
         e.css("left", t);
       },
-      setTop: function setTop(e, t) {
+      setTop: function (e, t) {
         e.css("top", t);
       }
     },
     transform: {
-      setPosition: function setPosition(e, t, n, r, i) {
+      setPosition: function (e, t, n, r, i) {
         e[0].style[f] = "translate3d(" + (t - n) + "px, " + (r - i) + "px, 0)";
       }
     }
@@ -208,11 +206,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         r = "",
         i;
 
-    for (i in n) {
-      if (t.test(i)) {
-        r = i.match(t)[0];
-        break;
-      }
+    for (i in n) if (t.test(i)) {
+      r = i.match(t)[0];
+      break;
     }
 
     return "WebkitOpacity" in n && (r = "Webkit"), "KhtmlOpacity" in n && (r = "Khtml"), function (e) {
@@ -239,15 +235,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   };
 
   d.prototype = {
-    init: function init() {
+    init: function () {
       this.options.name = i + "_" + Math.floor(Math.random() * 1e9), this._defineElements(), this._defineGetters(), this._defineSetters(), this._handleWindowLoadAndResize(), this._detectViewport(), this.refresh({
         firstLoad: !0
       }), this.options.scrollProperty === "scroll" ? this._handleScrollEvent() : this._startAnimationLoop();
     },
-    _defineElements: function _defineElements() {
+    _defineElements: function () {
       this.element === n.body && (this.element = t), this.$scrollElement = e(this.element), this.$element = this.element === t ? e("body") : this.$scrollElement, this.$viewportElement = this.options.viewportElement !== r ? e(this.options.viewportElement) : this.$scrollElement[0] === t || this.options.scrollProperty === "scroll" ? this.$scrollElement : this.$scrollElement.parent();
     },
-    _defineGetters: function _defineGetters() {
+    _defineGetters: function () {
       var e = this,
           t = o[e.options.scrollProperty];
       this._getScrollLeft = function () {
@@ -256,7 +252,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         return t.getTop(e.$scrollElement);
       };
     },
-    _defineSetters: function _defineSetters() {
+    _defineSetters: function () {
       var t = this,
           n = o[t.options.scrollProperty],
           r = u[t.options.positionProperty],
@@ -270,7 +266,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         t.options.horizontalScrolling && r.setLeft(e, n, i), t.options.verticalScrolling && r.setTop(e, s, o);
       };
     },
-    _handleWindowLoadAndResize: function _handleWindowLoadAndResize() {
+    _handleWindowLoadAndResize: function () {
       var n = this,
           r = e(t);
       n.options.responsive && r.bind("load." + this.name, function () {
@@ -279,7 +275,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         n._detectViewport(), n.options.responsive && n.refresh();
       });
     },
-    refresh: function refresh(n) {
+    refresh: function (n) {
       var r = this,
           i = r._getScrollLeft(),
           s = r._getScrollTop();
@@ -291,19 +287,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         r._setScrollLeft(e + 1), r._setScrollTop(t + 1), r._setScrollLeft(e), r._setScrollTop(t);
       }), this._setScrollLeft(i), this._setScrollTop(s);
     },
-    _detectViewport: function _detectViewport() {
+    _detectViewport: function () {
       var e = this.$viewportElement.offset(),
           t = e !== null && e !== r;
       this.viewportWidth = this.$viewportElement.width(), this.viewportHeight = this.$viewportElement.height(), this.viewportOffsetTop = t ? e.top : 0, this.viewportOffsetLeft = t ? e.left : 0;
     },
-    _findParticles: function _findParticles() {
+    _findParticles: function () {
       var t = this,
           n = this._getScrollLeft(),
           i = this._getScrollTop();
 
-      if (this.particles !== r) for (var s = this.particles.length - 1; s >= 0; s--) {
-        this.particles[s].$element.data("stellar-elementIsActive", r);
-      }
+      if (this.particles !== r) for (var s = this.particles.length - 1; s >= 0; s--) this.particles[s].$element.data("stellar-elementIsActive", r);
       this.particles = [];
       if (!this.options.parallaxElements) return;
       this.$element.find("[data-stellar-ratio]").each(function (n) {
@@ -345,7 +339,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         });
       });
     },
-    _findBackgrounds: function _findBackgrounds() {
+    _findBackgrounds: function () {
       var t = this,
           n = this._getScrollLeft(),
           i = this._getScrollTop(),
@@ -394,21 +388,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         });
       });
     },
-    _reset: function _reset() {
+    _reset: function () {
       var e, t, n, r, i;
 
-      for (i = this.particles.length - 1; i >= 0; i--) {
-        e = this.particles[i], t = e.$element.data("stellar-startingLeft"), n = e.$element.data("stellar-startingTop"), this._setPosition(e.$element, t, t, n, n), this.options.showElement(e.$element), e.$element.data("stellar-startingLeft", null).data("stellar-elementIsActive", null).data("stellar-backgroundIsActive", null);
-      }
+      for (i = this.particles.length - 1; i >= 0; i--) e = this.particles[i], t = e.$element.data("stellar-startingLeft"), n = e.$element.data("stellar-startingTop"), this._setPosition(e.$element, t, t, n, n), this.options.showElement(e.$element), e.$element.data("stellar-startingLeft", null).data("stellar-elementIsActive", null).data("stellar-backgroundIsActive", null);
 
-      for (i = this.backgrounds.length - 1; i >= 0; i--) {
-        r = this.backgrounds[i], r.$element.data("stellar-backgroundStartingLeft", null).data("stellar-backgroundStartingTop", null), c(r.$element, r.startingValueLeft, r.startingValueTop);
-      }
+      for (i = this.backgrounds.length - 1; i >= 0; i--) r = this.backgrounds[i], r.$element.data("stellar-backgroundStartingLeft", null).data("stellar-backgroundStartingTop", null), c(r.$element, r.startingValueLeft, r.startingValueTop);
     },
-    destroy: function destroy() {
+    destroy: function () {
       this._reset(), this.$scrollElement.unbind("resize." + this.name).unbind("scroll." + this.name), this._animationLoop = e.noop, e(t).unbind("load." + this.name).unbind("resize." + this.name);
     },
-    _setOffsets: function _setOffsets() {
+    _setOffsets: function () {
       var n = this,
           r = e(t);
       r.unbind("resize.horizontal-" + this.name).unbind("resize.vertical-" + this.name), typeof this.options.horizontalOffset == "function" ? (this.horizontalOffset = this.options.horizontalOffset(), r.bind("resize.horizontal-" + this.name, function () {
@@ -417,7 +407,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         n.verticalOffset = n.options.verticalOffset();
       })) : this.verticalOffset = this.options.verticalOffset;
     },
-    _repositionElements: function _repositionElements() {
+    _repositionElements: function () {
       var e = this._getScrollLeft(),
           t = this._getScrollTop(),
           n,
@@ -438,27 +428,23 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       if (this.currentScrollLeft === e && this.currentScrollTop === t && this.currentWidth === this.viewportWidth && this.currentHeight === this.viewportHeight) return;
       this.currentScrollLeft = e, this.currentScrollTop = t, this.currentWidth = this.viewportWidth, this.currentHeight = this.viewportHeight;
 
-      for (m = this.particles.length - 1; m >= 0; m--) {
-        i = this.particles[m], s = i.isFixed ? 1 : 0, this.options.horizontalScrolling ? (h = (e + i.horizontalOffset + this.viewportOffsetLeft + i.startingPositionLeft - i.startingOffsetLeft + i.parentOffsetLeft) * -(i.stellarRatio + s - 1) + i.startingPositionLeft, d = h - i.startingPositionLeft + i.startingOffsetLeft) : (h = i.startingPositionLeft, d = i.startingOffsetLeft), this.options.verticalScrolling ? (p = (t + i.verticalOffset + this.viewportOffsetTop + i.startingPositionTop - i.startingOffsetTop + i.parentOffsetTop) * -(i.stellarRatio + s - 1) + i.startingPositionTop, v = p - i.startingPositionTop + i.startingOffsetTop) : (p = i.startingPositionTop, v = i.startingOffsetTop), this.options.hideDistantElements && (l = !this.options.horizontalScrolling || d + i.width > (i.isFixed ? 0 : e) && d < (i.isFixed ? 0 : e) + this.viewportWidth + this.viewportOffsetLeft, f = !this.options.verticalScrolling || v + i.height > (i.isFixed ? 0 : t) && v < (i.isFixed ? 0 : t) + this.viewportHeight + this.viewportOffsetTop), l && f ? (i.isHidden && (this.options.showElement(i.$element), i.isHidden = !1), this._setPosition(i.$element, h, i.startingPositionLeft, p, i.startingPositionTop)) : i.isHidden || (this.options.hideElement(i.$element), i.isHidden = !0);
-      }
+      for (m = this.particles.length - 1; m >= 0; m--) i = this.particles[m], s = i.isFixed ? 1 : 0, this.options.horizontalScrolling ? (h = (e + i.horizontalOffset + this.viewportOffsetLeft + i.startingPositionLeft - i.startingOffsetLeft + i.parentOffsetLeft) * -(i.stellarRatio + s - 1) + i.startingPositionLeft, d = h - i.startingPositionLeft + i.startingOffsetLeft) : (h = i.startingPositionLeft, d = i.startingOffsetLeft), this.options.verticalScrolling ? (p = (t + i.verticalOffset + this.viewportOffsetTop + i.startingPositionTop - i.startingOffsetTop + i.parentOffsetTop) * -(i.stellarRatio + s - 1) + i.startingPositionTop, v = p - i.startingPositionTop + i.startingOffsetTop) : (p = i.startingPositionTop, v = i.startingOffsetTop), this.options.hideDistantElements && (l = !this.options.horizontalScrolling || d + i.width > (i.isFixed ? 0 : e) && d < (i.isFixed ? 0 : e) + this.viewportWidth + this.viewportOffsetLeft, f = !this.options.verticalScrolling || v + i.height > (i.isFixed ? 0 : t) && v < (i.isFixed ? 0 : t) + this.viewportHeight + this.viewportOffsetTop), l && f ? (i.isHidden && (this.options.showElement(i.$element), i.isHidden = !1), this._setPosition(i.$element, h, i.startingPositionLeft, p, i.startingPositionTop)) : i.isHidden || (this.options.hideElement(i.$element), i.isHidden = !0);
 
-      for (m = this.backgrounds.length - 1; m >= 0; m--) {
-        o = this.backgrounds[m], s = o.isFixed ? 0 : 1, u = this.options.horizontalScrolling ? (e + o.horizontalOffset - this.viewportOffsetLeft - o.startingOffsetLeft + o.parentOffsetLeft - o.startingBackgroundPositionLeft) * (s - o.stellarRatio) + "px" : o.startingValueLeft, a = this.options.verticalScrolling ? (t + o.verticalOffset - this.viewportOffsetTop - o.startingOffsetTop + o.parentOffsetTop - o.startingBackgroundPositionTop) * (s - o.stellarRatio) + "px" : o.startingValueTop, c(o.$element, u, a);
-      }
+      for (m = this.backgrounds.length - 1; m >= 0; m--) o = this.backgrounds[m], s = o.isFixed ? 0 : 1, u = this.options.horizontalScrolling ? (e + o.horizontalOffset - this.viewportOffsetLeft - o.startingOffsetLeft + o.parentOffsetLeft - o.startingBackgroundPositionLeft) * (s - o.stellarRatio) + "px" : o.startingValueLeft, a = this.options.verticalScrolling ? (t + o.verticalOffset - this.viewportOffsetTop - o.startingOffsetTop + o.parentOffsetTop - o.startingBackgroundPositionTop) * (s - o.stellarRatio) + "px" : o.startingValueTop, c(o.$element, u, a);
     },
-    _handleScrollEvent: function _handleScrollEvent() {
+    _handleScrollEvent: function () {
       var e = this,
           t = !1,
-          n = function n() {
+          n = function () {
         e._repositionElements(), t = !1;
       },
-          r = function r() {
+          r = function () {
         t || (p(n), t = !0);
       };
 
       this.$scrollElement.bind("scroll." + this.name, r), r();
     },
-    _startAnimationLoop: function _startAnimationLoop() {
+    _startAnimationLoop: function () {
       var e = this;
       this._animationLoop = function () {
         p(e._animationLoop), e._repositionElements();
@@ -466,7 +452,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     }
   }, e.fn[i] = function (t) {
     var n = arguments;
-    if (t === r || _typeof(t) == "object") return this.each(function () {
+    if (t === r || typeof t == "object") return this.each(function () {
       e.data(this, "plugin_" + i) || e.data(this, "plugin_" + i, new d(this, t));
     });
     if (typeof t == "string" && t[0] !== "_" && t !== "init") return this.each(function () {
@@ -506,7 +492,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37297" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "34853" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
